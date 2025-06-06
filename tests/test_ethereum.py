@@ -2,7 +2,8 @@ import pytest
 from ethereum import EthereumService
 
 class DummyWeb3Provider:
-    pass
+    def __init__(self, *args, **kwargs):
+        pass
 
 class DummyAccount:
     address = "0x0000000000000000000000000000000000000000"
