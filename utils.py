@@ -56,6 +56,20 @@ def retry_on_exception(func, retries: int = 3, wait: int = 2, exceptions=(Except
     raise Exception(f"Function failed after {retries} retries")
 
 
+def gas_price_estimate(w3, multiplier: float = 1.2) -> int:
+    """
+    Gas price-ის შეფასება. გამოიყენება ტრანზაქციისთვის.
+    :param w3: Web3 instance
+    :param multiplier: გაზის ფასის მულტიპლიკატორი (default: 1.2)
+    :return: gas price in wei
+    """
+    try:
+        gas_price = w3.eth.gas_price
+        return int(gas_price * multiplier)
+    except Exception as e:
+        logging.error(f"Gas price estimation error: {e}")
+        raise
+
 
 def setup_logger(logfile="web3worker.log"):
     logger = logging.getLogger("SferoWeb3Worker")

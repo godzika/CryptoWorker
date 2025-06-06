@@ -2,6 +2,7 @@ from config import Config
 from utils import validate_eth_address
 
 class UniswapService:
+
     def __init__(self, eth_service):
         self.w3 = eth_service.w3
         self.account = eth_service.account

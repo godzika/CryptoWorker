@@ -6,9 +6,9 @@ from ethereum import EthereumService
 from uniswap import UniswapService
 from models import Transaction
 from utils import call_callback_url, validate_eth_address, setup_logger
-
+from checker import Checker
 logger = setup_logger("web3worker.log")
-
+# logger
 def process_transaction(db: Database, eth: EthereumService, uni: UniswapService, tx: Transaction):
     callback_data = {
         "internal_id": tx.internal_id,
@@ -68,6 +68,15 @@ def main():
     db = Database()
     eth = EthereumService()
     uni = UniswapService(eth)
+
+    checker = Checker(db, eth, uni)
+    if not checker.check_services():
+        logger.critical("Service check failed, exiting.")
+        return
+    checker.check_balance_of_main_account()
+    checker.check_balance_of_main_account_token()
+
+
     try:
         while True:
             txs = db.fetch_pending_transactions()
@@ -77,6 +86,9 @@ def main():
     except Exception as main_e:
         logger.critical(f"MAIN LOOP CRASH: {main_e}")
         logger.critical(traceback.format_exc())
+
+    except KeyboardInterrupt:
+        logger.info("Worker stopped by user.")
     finally:
         db.close()
 

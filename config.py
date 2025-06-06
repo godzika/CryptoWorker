@@ -2,6 +2,16 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+# check if all required environment variables are set
+required_vars = [
+    'DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_USER', 'DB_PASSWORD',
+    'ETH_NODE_URL', 'HOT_WALLET_PRIVATE_KEY', 'HOT_WALLET_PUBLIC_ADDRESS',
+    'SFC_CONTRACT_ADDRESS', 'USDT_CONTRACT_ADDRESS', 'UNISWAP_ROUTER_ADDRESS',
+    'NETWORK_ID'
+]
+for var in required_vars:
+    if not os.getenv(var):
+        raise EnvironmentError(f"Required environment variable {var} is not set.")
 
 class Config:
     DB_HOST = os.getenv('DB_HOST')

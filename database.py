@@ -5,6 +5,16 @@ from models import Transaction
 from config import Config
 
 class Database:
+    # is connected?
+    def is_connected(self) -> bool:
+        try:
+            with self.conn.cursor() as cur:
+                cur.execute("SELECT 1")
+            return True
+        except Exception as e:
+            print(f"Database connection error: {e}")
+            return False
+
     def __init__(self):
         self.conn = psycopg2.connect(
             dbname=Config.DB_NAME,
