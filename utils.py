@@ -4,6 +4,7 @@ import time
 from typing import Optional
 import logging
 from logging.handlers import RotatingFileHandler
+import threading
 
 def call_callback_url(callback_url: str, data: dict, retries: int = 3, timeout: int = 5) -> bool:
     """
@@ -56,18 +57,53 @@ def retry_on_exception(func, retries: int = 3, wait: int = 2, exceptions=(Except
     raise Exception(f"Function failed after {retries} retries")
 
 
+def gas_price_estimate(w3, multiplier: float = 1.2) -> int:
+    """
+    Gas price-ის შეფასება. გამოიყენება ტრანზაქციისთვის.
+    :param w3: Web3 instance
+    :param multiplier: გაზის ფასის მულტიპლიკატორი (default: 1.2)
+    :return: gas price in wei
+    """
+    try:
+        gas_price = w3.eth.gas_price
+        return int(gas_price * multiplier)
+    except Exception as e:
+        logging.error(f"Gas price estimation error: {e}")
+        raise
+
 
 def setup_logger(logfile="web3worker.log"):
     logger = logging.getLogger("SferoWeb3Worker")
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s (%(filename)s:%(lineno)d)')
-    # Log to file (rotate 5MB, 5 files)
-    file_handler = RotatingFileHandler(logfile, maxBytes=5*1024*1024, backupCount=5)
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-    # Also log to stdout
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(formatter)
-    logger.addHandler(stream_handler)
+    # Check if the logger already has handlers to avoid adding multiple handlers
+    if not logger.handlers:
+        formatter = logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s (%(filename)s:%(lineno)d)')
+        file_handler = RotatingFileHandler(logfile, maxBytes=5*1024*1024, backupCount=5)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(stream_handler)
     return logger
+
+
+# utils.py
+
+class NonceManager:
+    def __init__(self, w3, address):
+        self._lock = threading.Lock()
+        self._w3 = w3
+        self._address = address
+        self._nonce = self._w3.eth.get_transaction_count(self._address, 'pending')
+
+    def get_next_nonce(self):
+        with self._lock:
+            nonce = self._nonce
+            self._nonce += 1
+            return nonce
+
+    def set_nonce(self, nonce):
+        with self._lock:
+            self._nonce = nonce
+
 

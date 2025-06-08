@@ -6,9 +6,12 @@ from ethereum import EthereumService
 from uniswap import UniswapService
 from models import Transaction
 from utils import call_callback_url, validate_eth_address, setup_logger
+from checker import Checker
+import threading
+from monitor import monitor_pending_transactions
 
 logger = setup_logger("web3worker.log")
-
+# logger
 def process_transaction(db: Database, eth: EthereumService, uni: UniswapService, tx: Transaction):
     callback_data = {
         "internal_id": tx.internal_id,
@@ -22,10 +25,12 @@ def process_transaction(db: Database, eth: EthereumService, uni: UniswapService,
         if not validate_eth_address(tx.destination_address):
             raise ValueError(f"Invalid destination address: {tx.destination_address}")
 
+        nonce = eth.nonce_manager.get_next_nonce()
+
         if tx.operation_type == "WITHDRAW_SFC":
-            tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+            tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
         elif tx.operation_type == "WITHDRAW_USDT":
-            tx_hash = eth.send_token(Config.USDT_CONTRACT, tx.destination_address, tx.amount, decimals=6)
+            tx_hash = eth.send_token(Config.USDT_CONTRACT, tx.destination_address, tx.amount, decimals=6, custom_nonce=nonce)
         elif tx.operation_type in ["SWAP_TO_SFC", "SWAP_TO_USDT"]:
             path = [Config.USDT_CONTRACT, Config.SFC_CONTRACT] if tx.operation_type == "SWAP_TO_SFC" else [Config.SFC_CONTRACT, Config.USDT_CONTRACT]
             deadline = int(time.time()) + 60 * 10
@@ -35,7 +40,7 @@ def process_transaction(db: Database, eth: EthereumService, uni: UniswapService,
                 if not validate_eth_address(addr):
                     raise ValueError(f"Invalid contract address in path: {addr}")
 
-            tx_hash = uni.swap_exact_tokens_for_tokens(tx.amount, amount_out_min, path, tx.destination_address, deadline)
+            tx_hash = uni.swap_exact_tokens_for_tokens(tx.amount, amount_out_min, path, tx.destination_address, deadline, custom_nonce=nonce)
         else:
             raise Exception("Unknown operation_type")
 
@@ -68,15 +73,42 @@ def main():
     db = Database()
     eth = EthereumService()
     uni = UniswapService(eth)
+
+    checker = Checker(db, eth, uni)
+    if not checker.check_services():
+        logger.critical("Service check failed, exiting.")
+        return
+    checker.check_balance_of_main_account()
+    checker.check_balance_of_main_account_token()
+
+    # Start the monitor thread for pending transactions
+    threading.Thread(target=monitor_pending_transactions, args=(db, eth), daemon=True).start()
+
     try:
+        logger.info("Starting main worker loop...")
+        # try to process lost transactions first
+        logger.info("Processing lost transactions...")
+        lost_txs = db.fetch_failed_transactions()
+        if not lost_txs:
+            logger.info("No lost transactions found.")
+        else:
+            logger.info(f"Found {len(lost_txs)} lost transactions to process.")
+        for tx in lost_txs:
+            process_transaction(db, eth, uni, tx)
+        # main loop for processing pending transactions
+        logger.info("Processing pending transactions...")
+
         while True:
-            txs = db.fetch_pending_transactions()
+            txs = db.fetch_waiting_transactions()
             for tx in txs:
                 process_transaction(db, eth, uni, tx)
             time.sleep(5)
     except Exception as main_e:
         logger.critical(f"MAIN LOOP CRASH: {main_e}")
         logger.critical(traceback.format_exc())
+
+    except KeyboardInterrupt:
+        logger.info("Worker stopped by user.")
     finally:
         db.close()
 

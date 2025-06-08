@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 from decimal import Decimal
+from datetime import datetime
 
 @dataclass
 class Transaction:
@@ -16,4 +17,6 @@ class Transaction:
     confirmations: int
     error_message: Optional[str]
     retries: int
+    created_at: Optional[datetime]
+    updated_at: Optional[datetime]
     callback_url: Optional[str]
