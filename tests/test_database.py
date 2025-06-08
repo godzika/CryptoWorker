@@ -5,7 +5,7 @@ from models import Transaction
 class DummyDB(Database):
     def __init__(self):
         pass
-    def fetch_pending_transactions(self):
+    def fetch_waiting_transactions(self):
         return [Transaction(
             tx_id=1,
             internal_id="abc123",
@@ -26,7 +26,7 @@ class DummyDB(Database):
 
 def test_fetch_and_update():
     db = DummyDB()
-    txs = db.fetch_pending_transactions()
+    txs = db.fetch_waiting_transactions()
     assert len(txs) == 1
     assert txs[0].status == "WAITING"
     assert db.update_transaction_status("abc123", "PENDING") is True

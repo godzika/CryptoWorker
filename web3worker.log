@@ -73,3 +73,1451 @@
 [2025-06-07 03:44:30,394] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
 [2025-06-07 03:44:31,020] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
 [2025-06-07 03:57:44,826] INFO: Worker stopped by user. (main.py:91)
+[2025-06-07 04:10:32,275] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 04:10:32,410] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 04:10:32,594] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 04:10:32,595] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 04:10:32,844] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 04:10:33,053] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
+[2025-06-07 04:10:33,629] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
+[2025-06-07 04:11:39,626] CRITICAL: MAIN LOOP CRASH: __init__() got an unexpected keyword argument 'created_at' (main.py:87)
+[2025-06-07 04:11:39,649] CRITICAL: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 82, in main
+    txs = db.fetch_pending_transactions()
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\database.py", line 37, in fetch_pending_transactions
+    return [Transaction(**row) for row in rows]
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\database.py", line 37, in <listcomp>
+    return [Transaction(**row) for row in rows]
+TypeError: __init__() got an unexpected keyword argument 'created_at'
+ (main.py:88)
+[2025-06-07 04:17:09,401] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 04:17:09,536] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 04:17:09,814] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 04:17:09,815] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 04:17:10,063] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 04:17:10,251] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
+[2025-06-07 04:17:10,833] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
+[2025-06-07 04:17:10,901] INFO: START tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x98B0a1138D738762c0EB9a322B458A4AF1920d77 (main.py:21)
+[2025-06-07 04:17:10,905] ERROR: FAILED tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:10,974] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:11,110] INFO: START tx_id=a2859f11-138f-490b-89f0-4bdc223072ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc158185a9Aa6d4e2aFeCA568A07177f1ed08cD61 (main.py:21)
+[2025-06-07 04:17:11,120] ERROR: FAILED tx_id=a2859f11-138f-490b-89f0-4bdc223072ea error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:11,123] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:11,321] INFO: START tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xaceC834BBD036aee2E2ef9D20179E9c0a46a2c22 (main.py:21)
+[2025-06-07 04:17:11,327] ERROR: FAILED tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:11,329] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:11,535] INFO: START tx_id=957b5186-e4b6-446a-bf46-322568f79139 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x20C5Ea873526FBc4e2FA0053Aabf900706dC7152 (main.py:21)
+[2025-06-07 04:17:11,540] ERROR: FAILED tx_id=957b5186-e4b6-446a-bf46-322568f79139 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:11,542] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:11,745] INFO: START tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x12657B620D0f0cf7c1a3A058BCAc031d6bA6023D (main.py:21)
+[2025-06-07 04:17:11,750] ERROR: FAILED tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:11,751] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:17,082] INFO: START tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x98B0a1138D738762c0EB9a322B458A4AF1920d77 (main.py:21)
+[2025-06-07 04:17:17,086] ERROR: FAILED tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:17,087] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:17,219] INFO: START tx_id=a2859f11-138f-490b-89f0-4bdc223072ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc158185a9Aa6d4e2aFeCA568A07177f1ed08cD61 (main.py:21)
+[2025-06-07 04:17:17,223] ERROR: FAILED tx_id=a2859f11-138f-490b-89f0-4bdc223072ea error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:17,224] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:17,424] INFO: START tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xaceC834BBD036aee2E2ef9D20179E9c0a46a2c22 (main.py:21)
+[2025-06-07 04:17:17,433] ERROR: FAILED tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:17,436] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:17,639] INFO: START tx_id=957b5186-e4b6-446a-bf46-322568f79139 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x20C5Ea873526FBc4e2FA0053Aabf900706dC7152 (main.py:21)
+[2025-06-07 04:17:17,648] ERROR: FAILED tx_id=957b5186-e4b6-446a-bf46-322568f79139 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:17,651] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:17,857] INFO: START tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x12657B620D0f0cf7c1a3A058BCAc031d6bA6023D (main.py:21)
+[2025-06-07 04:17:17,862] ERROR: FAILED tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:17,864] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:23,197] INFO: START tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x98B0a1138D738762c0EB9a322B458A4AF1920d77 (main.py:21)
+[2025-06-07 04:17:23,201] ERROR: FAILED tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:23,202] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:23,339] INFO: START tx_id=a2859f11-138f-490b-89f0-4bdc223072ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc158185a9Aa6d4e2aFeCA568A07177f1ed08cD61 (main.py:21)
+[2025-06-07 04:17:23,342] ERROR: FAILED tx_id=a2859f11-138f-490b-89f0-4bdc223072ea error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:23,343] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:23,544] INFO: START tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xaceC834BBD036aee2E2ef9D20179E9c0a46a2c22 (main.py:21)
+[2025-06-07 04:17:23,549] ERROR: FAILED tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:23,550] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:23,755] INFO: START tx_id=957b5186-e4b6-446a-bf46-322568f79139 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x20C5Ea873526FBc4e2FA0053Aabf900706dC7152 (main.py:21)
+[2025-06-07 04:17:23,758] ERROR: FAILED tx_id=957b5186-e4b6-446a-bf46-322568f79139 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:23,759] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:17:23,959] INFO: START tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x12657B620D0f0cf7c1a3A058BCAc031d6bA6023D (main.py:21)
+[2025-06-07 04:17:23,964] ERROR: FAILED tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 error=('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96') (main.py:49)
+[2025-06-07 04:17:23,965] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 51, in send_token
+    contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 692, in contract
+    return ContractFactory(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\contract\contract.py", line 429, in __init__
+    self.address = normalize_address(cast("ENS", _w3._ens), address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\normalizers.py", line 264, in normalize_address
+    validate_address(address)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 201, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xea09246ca65d690ff1e6adc2ddf0af12dc5bef96')
+ (main.py:50)
+[2025-06-07 04:25:23,795] INFO: Worker stopped by user. (main.py:91)
+[2025-06-07 04:25:28,452] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 04:25:28,587] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 04:25:28,768] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 04:25:28,769] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 04:25:29,010] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 04:25:29,204] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
+[2025-06-07 04:25:29,758] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
+[2025-06-07 04:26:15,500] INFO: START tx_id=ca954026-57be-4506-b883-dd82d46af279 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8D06aCe09fAE5ab09e72735c1205Af64B660890D (main.py:21)
+[2025-06-07 04:26:15,891] ERROR: FAILED tx_id=ca954026-57be-4506-b883-dd82d46af279 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:15,893] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:16,024] INFO: START tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9F0E540c6F5bEFE8773c1E01269349cfD09004bB (main.py:21)
+[2025-06-07 04:26:16,423] ERROR: FAILED tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:16,424] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:16,618] INFO: START tx_id=229842c2-5d66-4696-8683-2538436cf320 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCB6f55F4d8340289Dc77DbDfeEaE289167e78A84 (main.py:21)
+[2025-06-07 04:26:17,070] ERROR: FAILED tx_id=229842c2-5d66-4696-8683-2538436cf320 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:17,070] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:17,265] INFO: START tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x25f5A7c3f181256Ab9Ac3505AE63138f555b0b7d (main.py:21)
+[2025-06-07 04:26:17,651] ERROR: FAILED tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:17,652] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:17,845] INFO: START tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6D038564632aaaD8E34c024ccb2d3568e3A16c7C (main.py:21)
+[2025-06-07 04:26:18,226] ERROR: FAILED tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:18,229] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:23,574] INFO: START tx_id=ca954026-57be-4506-b883-dd82d46af279 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8D06aCe09fAE5ab09e72735c1205Af64B660890D (main.py:21)
+[2025-06-07 04:26:23,956] ERROR: FAILED tx_id=ca954026-57be-4506-b883-dd82d46af279 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:23,957] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:24,085] INFO: START tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9F0E540c6F5bEFE8773c1E01269349cfD09004bB (main.py:21)
+[2025-06-07 04:26:24,529] ERROR: FAILED tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:24,530] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:24,723] INFO: START tx_id=229842c2-5d66-4696-8683-2538436cf320 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCB6f55F4d8340289Dc77DbDfeEaE289167e78A84 (main.py:21)
+[2025-06-07 04:26:25,130] ERROR: FAILED tx_id=229842c2-5d66-4696-8683-2538436cf320 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:25,132] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:25,332] INFO: START tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x25f5A7c3f181256Ab9Ac3505AE63138f555b0b7d (main.py:21)
+[2025-06-07 04:26:25,734] ERROR: FAILED tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:25,735] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:25,929] INFO: START tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6D038564632aaaD8E34c024ccb2d3568e3A16c7C (main.py:21)
+[2025-06-07 04:26:26,316] ERROR: FAILED tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:26,317] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:31,653] INFO: START tx_id=ca954026-57be-4506-b883-dd82d46af279 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8D06aCe09fAE5ab09e72735c1205Af64B660890D (main.py:21)
+[2025-06-07 04:26:32,029] ERROR: FAILED tx_id=ca954026-57be-4506-b883-dd82d46af279 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:32,030] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:32,159] INFO: START tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9F0E540c6F5bEFE8773c1E01269349cfD09004bB (main.py:21)
+[2025-06-07 04:26:32,533] ERROR: FAILED tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:32,535] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:32,728] INFO: START tx_id=229842c2-5d66-4696-8683-2538436cf320 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCB6f55F4d8340289Dc77DbDfeEaE289167e78A84 (main.py:21)
+[2025-06-07 04:26:33,096] ERROR: FAILED tx_id=229842c2-5d66-4696-8683-2538436cf320 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:33,097] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:33,291] INFO: START tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x25f5A7c3f181256Ab9Ac3505AE63138f555b0b7d (main.py:21)
+[2025-06-07 04:26:33,654] ERROR: FAILED tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:33,655] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:26:33,852] INFO: START tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6D038564632aaaD8E34c024ccb2d3568e3A16c7C (main.py:21)
+[2025-06-07 04:26:34,218] ERROR: FAILED tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:49)
+[2025-06-07 04:26:34,219] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:50)
+[2025-06-07 04:28:25,747] INFO: Worker stopped by user. (main.py:91)
+[2025-06-07 04:30:21,013] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 04:30:21,150] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 04:30:21,320] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 04:30:21,320] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 04:30:21,576] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 04:30:21,758] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
+[2025-06-07 04:30:22,306] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
+[2025-06-07 04:33:38,586] INFO: Worker stopped by user. (main.py:91)
+[2025-06-07 04:33:43,251] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 04:33:43,382] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 04:33:43,566] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 04:33:43,567] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 04:33:43,889] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 04:33:44,089] WARNING: Main account balance is too low. Current balance: 0.004474025601917232 ETH (checker.py:49)
+[2025-06-07 04:33:44,658] INFO: Main account token balance is sufficient: 100000.0 tokens (checker.py:70)
+[2025-06-07 04:33:44,660] INFO: Starting main worker loop... (main.py:81)
+[2025-06-07 04:33:44,661] INFO: Processing lost transactions... (main.py:83)
+[2025-06-07 04:33:44,730] INFO: Found 10 lost transactions to process. (main.py:88)
+[2025-06-07 04:33:44,732] INFO: START tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x98B0a1138D738762c0EB9a322B458A4AF1920d77 (main.py:21)
+[2025-06-07 04:33:45,445] INFO: SUCCESS tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6 status=PENDING hash=aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660 (main.py:45)
+[2025-06-07 04:33:45,447] INFO: START tx_id=a2859f11-138f-490b-89f0-4bdc223072ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc158185a9Aa6d4e2aFeCA568A07177f1ed08cD61 (main.py:21)
+[2025-06-07 04:33:46,035] ERROR: FAILED tx_id=a2859f11-138f-490b-89f0-4bdc223072ea error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:46,081] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:46,280] INFO: START tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xaceC834BBD036aee2E2ef9D20179E9c0a46a2c22 (main.py:21)
+[2025-06-07 04:33:46,833] ERROR: FAILED tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:46,835] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:47,028] INFO: START tx_id=957b5186-e4b6-446a-bf46-322568f79139 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x20C5Ea873526FBc4e2FA0053Aabf900706dC7152 (main.py:21)
+[2025-06-07 04:33:47,587] ERROR: FAILED tx_id=957b5186-e4b6-446a-bf46-322568f79139 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:47,590] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:47,785] INFO: START tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x12657B620D0f0cf7c1a3A058BCAc031d6bA6023D (main.py:21)
+[2025-06-07 04:33:48,365] ERROR: FAILED tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:48,367] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:48,562] INFO: START tx_id=ca954026-57be-4506-b883-dd82d46af279 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8D06aCe09fAE5ab09e72735c1205Af64B660890D (main.py:21)
+[2025-06-07 04:33:49,117] ERROR: FAILED tx_id=ca954026-57be-4506-b883-dd82d46af279 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:49,120] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:49,316] INFO: START tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9F0E540c6F5bEFE8773c1E01269349cfD09004bB (main.py:21)
+[2025-06-07 04:33:49,887] ERROR: FAILED tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:49,890] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:50,096] INFO: START tx_id=229842c2-5d66-4696-8683-2538436cf320 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCB6f55F4d8340289Dc77DbDfeEaE289167e78A84 (main.py:21)
+[2025-06-07 04:33:50,670] ERROR: FAILED tx_id=229842c2-5d66-4696-8683-2538436cf320 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:50,672] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:50,869] INFO: START tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x25f5A7c3f181256Ab9Ac3505AE63138f555b0b7d (main.py:21)
+[2025-06-07 04:33:51,459] ERROR: FAILED tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:51,462] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:51,675] INFO: START tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6D038564632aaaD8E34c024ccb2d3568e3A16c7C (main.py:21)
+[2025-06-07 04:33:52,266] ERROR: FAILED tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a error={'code': -32603, 'message': 'replacement transaction underpriced'} (main.py:49)
+[2025-06-07 04:33:52,267] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 26, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 63, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32603, 'message': 'replacement transaction underpriced'}
+ (main.py:50)
+[2025-06-07 04:33:52,466] INFO: Processing pending transactions... (main.py:92)
+[2025-06-07 15:24:53,026] INFO: Worker stopped by user. (main.py:104)
+[2025-06-07 15:25:00,619] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 15:25:00,749] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 15:25:00,946] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 15:25:00,947] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 15:25:01,206] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 15:25:01,389] WARNING: Main account balance is too low. Current balance: 0.00441194916456001 ETH (checker.py:49)
+[2025-06-07 15:25:01,940] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99999.0 tokens (checker.py:68)
+[2025-06-07 15:25:01,941] INFO: Starting main worker loop... (main.py:83)
+[2025-06-07 15:25:01,941] INFO: Processing lost transactions... (main.py:85)
+[2025-06-07 15:25:02,009] INFO: Found 9 lost transactions to process. (main.py:90)
+[2025-06-07 15:25:02,009] INFO: START tx_id=a2859f11-138f-490b-89f0-4bdc223072ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc158185a9Aa6d4e2aFeCA568A07177f1ed08cD61 (main.py:21)
+[2025-06-07 15:25:02,523] INFO: SUCCESS tx_id=a2859f11-138f-490b-89f0-4bdc223072ea status=PENDING hash=bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861 (main.py:47)
+[2025-06-07 15:25:02,524] INFO: START tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xaceC834BBD036aee2E2ef9D20179E9c0a46a2c22 (main.py:21)
+[2025-06-07 15:25:03,111] INFO: SUCCESS tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536 status=PENDING hash=cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472 (main.py:47)
+[2025-06-07 15:25:03,112] INFO: START tx_id=957b5186-e4b6-446a-bf46-322568f79139 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x20C5Ea873526FBc4e2FA0053Aabf900706dC7152 (main.py:21)
+[2025-06-07 15:25:03,691] INFO: SUCCESS tx_id=957b5186-e4b6-446a-bf46-322568f79139 status=PENDING hash=0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014 (main.py:47)
+[2025-06-07 15:25:03,691] INFO: START tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x12657B620D0f0cf7c1a3A058BCAc031d6bA6023D (main.py:21)
+[2025-06-07 15:25:04,272] INFO: SUCCESS tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0 status=PENDING hash=47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161 (main.py:47)
+[2025-06-07 15:25:04,273] INFO: START tx_id=ca954026-57be-4506-b883-dd82d46af279 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8D06aCe09fAE5ab09e72735c1205Af64B660890D (main.py:21)
+[2025-06-07 15:25:04,856] INFO: SUCCESS tx_id=ca954026-57be-4506-b883-dd82d46af279 status=PENDING hash=6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441 (main.py:47)
+[2025-06-07 15:25:04,858] INFO: START tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9F0E540c6F5bEFE8773c1E01269349cfD09004bB (main.py:21)
+[2025-06-07 15:25:05,478] INFO: SUCCESS tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7 status=PENDING hash=3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94 (main.py:47)
+[2025-06-07 15:25:05,480] INFO: START tx_id=229842c2-5d66-4696-8683-2538436cf320 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCB6f55F4d8340289Dc77DbDfeEaE289167e78A84 (main.py:21)
+[2025-06-07 15:25:06,069] INFO: SUCCESS tx_id=229842c2-5d66-4696-8683-2538436cf320 status=PENDING hash=2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8 (main.py:47)
+[2025-06-07 15:25:06,070] INFO: START tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x25f5A7c3f181256Ab9Ac3505AE63138f555b0b7d (main.py:21)
+[2025-06-07 15:25:06,665] INFO: SUCCESS tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86 status=PENDING hash=9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192 (main.py:47)
+[2025-06-07 15:25:06,666] INFO: START tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6D038564632aaaD8E34c024ccb2d3568e3A16c7C (main.py:21)
+[2025-06-07 15:25:07,240] INFO: SUCCESS tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a status=PENDING hash=7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760 (main.py:47)
+[2025-06-07 15:25:07,241] INFO: Processing pending transactions... (main.py:94)
+[2025-06-07 15:26:23,458] INFO: START tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x55d290dB31C63587dc2ec9E24920ccB7e8fA7E52 (main.py:21)
+[2025-06-07 15:26:24,060] INFO: SUCCESS tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c status=PENDING hash=9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7 (main.py:47)
+[2025-06-07 15:26:24,060] INFO: START tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x959c308bC30A743C3B42F67cEb824a7C5BCd014f (main.py:21)
+[2025-06-07 15:26:24,656] INFO: SUCCESS tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e status=PENDING hash=2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8 (main.py:47)
+[2025-06-07 15:26:29,798] INFO: START tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6d1041710a4Ec95547BE51955Ecc4Db91E738272 (main.py:21)
+[2025-06-07 15:26:30,334] INFO: SUCCESS tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf status=PENDING hash=cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40 (main.py:47)
+[2025-06-07 15:26:30,336] INFO: START tx_id=817dda13-2045-49fd-bedd-1939fe1926c4 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x0eB0d97e8Ced7dd57702F56297a9C7ab4e150D9e (main.py:21)
+[2025-06-07 15:26:30,928] INFO: SUCCESS tx_id=817dda13-2045-49fd-bedd-1939fe1926c4 status=PENDING hash=ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d (main.py:47)
+[2025-06-07 15:26:30,929] INFO: START tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xf8D7C9D0a3e62E351CaB6a33bf9BAaa5c078c61a (main.py:21)
+[2025-06-07 15:26:31,501] INFO: SUCCESS tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147 status=PENDING hash=20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9 (main.py:47)
+[2025-06-07 16:03:42,877] INFO: Worker stopped by user. (main.py:106)
+[2025-06-07 16:05:33,491] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:05:33,621] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:05:33,836] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:05:33,837] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:05:34,117] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:05:34,305] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:34,897] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:34,900] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:05:34,903] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:05:34,970] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:05:34,972] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:05:35,115] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:35,149] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:35,746] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:35,747] INFO: Monitor started: confirmations_required=3, poll_interval=15s (monitor.py:17)
+[2025-06-07 16:05:35,773] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:35,879] ERROR: Error fetching receipt for tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660 (monitor.py:34)
+[2025-06-07 16:05:35,895] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660
+ (monitor.py:35)
+[2025-06-07 16:05:35,896] ERROR: Error fetching receipt for tx_id=a2859f11-138f-490b-89f0-4bdc223072ea: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861 (monitor.py:34)
+[2025-06-07 16:05:35,897] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861
+ (monitor.py:35)
+[2025-06-07 16:05:35,898] ERROR: Error fetching receipt for tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472 (monitor.py:34)
+[2025-06-07 16:05:35,899] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472
+ (monitor.py:35)
+[2025-06-07 16:05:35,900] ERROR: Error fetching receipt for tx_id=957b5186-e4b6-446a-bf46-322568f79139: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014 (monitor.py:34)
+[2025-06-07 16:05:35,902] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014
+ (monitor.py:35)
+[2025-06-07 16:05:35,903] ERROR: Error fetching receipt for tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161 (monitor.py:34)
+[2025-06-07 16:05:35,904] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161
+ (monitor.py:35)
+[2025-06-07 16:05:35,905] ERROR: Error fetching receipt for tx_id=ca954026-57be-4506-b883-dd82d46af279: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441 (monitor.py:34)
+[2025-06-07 16:05:35,906] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441
+ (monitor.py:35)
+[2025-06-07 16:05:35,908] ERROR: Error fetching receipt for tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94 (monitor.py:34)
+[2025-06-07 16:05:35,909] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94
+ (monitor.py:35)
+[2025-06-07 16:05:35,910] ERROR: Error fetching receipt for tx_id=229842c2-5d66-4696-8683-2538436cf320: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8 (monitor.py:34)
+[2025-06-07 16:05:35,911] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8
+ (monitor.py:35)
+[2025-06-07 16:05:35,912] ERROR: Error fetching receipt for tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192 (monitor.py:34)
+[2025-06-07 16:05:35,913] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192
+ (monitor.py:35)
+[2025-06-07 16:05:35,914] ERROR: Error fetching receipt for tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760 (monitor.py:34)
+[2025-06-07 16:05:35,925] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760
+ (monitor.py:35)
+[2025-06-07 16:05:35,926] ERROR: Error fetching receipt for tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7 (monitor.py:34)
+[2025-06-07 16:05:35,927] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7
+ (monitor.py:35)
+[2025-06-07 16:05:35,928] ERROR: Error fetching receipt for tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8 (monitor.py:34)
+[2025-06-07 16:05:35,930] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8
+ (monitor.py:35)
+[2025-06-07 16:05:35,931] ERROR: Error fetching receipt for tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40 (monitor.py:34)
+[2025-06-07 16:05:35,932] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40
+ (monitor.py:35)
+[2025-06-07 16:05:35,933] ERROR: Error fetching receipt for tx_id=817dda13-2045-49fd-bedd-1939fe1926c4: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d (monitor.py:34)
+[2025-06-07 16:05:35,934] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d
+ (monitor.py:35)
+[2025-06-07 16:05:35,935] ERROR: Error fetching receipt for tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9 (monitor.py:34)
+[2025-06-07 16:05:35,937] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9
+ (monitor.py:35)
+[2025-06-07 16:05:41,062] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:41,637] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:46,886] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:47,453] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:51,013] ERROR: Error fetching receipt for tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660 (monitor.py:34)
+[2025-06-07 16:05:51,016] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660
+ (monitor.py:35)
+[2025-06-07 16:05:51,019] ERROR: Error fetching receipt for tx_id=a2859f11-138f-490b-89f0-4bdc223072ea: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861 (monitor.py:34)
+[2025-06-07 16:05:51,023] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861
+ (monitor.py:35)
+[2025-06-07 16:05:51,026] ERROR: Error fetching receipt for tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472 (monitor.py:34)
+[2025-06-07 16:05:51,029] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472
+ (monitor.py:35)
+[2025-06-07 16:05:51,033] ERROR: Error fetching receipt for tx_id=957b5186-e4b6-446a-bf46-322568f79139: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014 (monitor.py:34)
+[2025-06-07 16:05:51,036] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014
+ (monitor.py:35)
+[2025-06-07 16:05:51,040] ERROR: Error fetching receipt for tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161 (monitor.py:34)
+[2025-06-07 16:05:51,043] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161
+ (monitor.py:35)
+[2025-06-07 16:05:51,046] ERROR: Error fetching receipt for tx_id=ca954026-57be-4506-b883-dd82d46af279: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441 (monitor.py:34)
+[2025-06-07 16:05:51,048] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441
+ (monitor.py:35)
+[2025-06-07 16:05:51,050] ERROR: Error fetching receipt for tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94 (monitor.py:34)
+[2025-06-07 16:05:51,052] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94
+ (monitor.py:35)
+[2025-06-07 16:05:51,054] ERROR: Error fetching receipt for tx_id=229842c2-5d66-4696-8683-2538436cf320: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8 (monitor.py:34)
+[2025-06-07 16:05:51,056] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8
+ (monitor.py:35)
+[2025-06-07 16:05:51,058] ERROR: Error fetching receipt for tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192 (monitor.py:34)
+[2025-06-07 16:05:51,060] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192
+ (monitor.py:35)
+[2025-06-07 16:05:51,061] ERROR: Error fetching receipt for tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760 (monitor.py:34)
+[2025-06-07 16:05:51,063] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760
+ (monitor.py:35)
+[2025-06-07 16:05:51,064] ERROR: Error fetching receipt for tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7 (monitor.py:34)
+[2025-06-07 16:05:51,066] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7
+ (monitor.py:35)
+[2025-06-07 16:05:51,067] ERROR: Error fetching receipt for tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8 (monitor.py:34)
+[2025-06-07 16:05:51,069] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8
+ (monitor.py:35)
+[2025-06-07 16:05:51,070] ERROR: Error fetching receipt for tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40 (monitor.py:34)
+[2025-06-07 16:05:51,073] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40
+ (monitor.py:35)
+[2025-06-07 16:05:51,074] ERROR: Error fetching receipt for tx_id=817dda13-2045-49fd-bedd-1939fe1926c4: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d (monitor.py:34)
+[2025-06-07 16:05:51,076] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d
+ (monitor.py:35)
+[2025-06-07 16:05:51,078] ERROR: Error fetching receipt for tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9 (monitor.py:34)
+[2025-06-07 16:05:51,079] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9
+ (monitor.py:35)
+[2025-06-07 16:05:52,694] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:53,261] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:57,228] INFO: Worker stopped by user. (main.py:113)
+[2025-06-07 16:17:54,149] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:17:54,278] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:17:54,460] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:17:54,461] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:17:54,712] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:17:54,901] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:55,468] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:17:55,470] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:17:55,473] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:17:55,540] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:17:55,541] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:17:55,696] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:55,734] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:56,249] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:17:56,250] INFO: Monitor started: confirmations_required=3, poll_interval=15s (monitor.py:17)
+[2025-06-07 16:17:56,300] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:01,584] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:02,110] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:07,386] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:08,063] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:11,477] WARNING: No tx_hash for tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f, skipping... (monitor.py:25)
+[2025-06-07 16:18:11,478] WARNING: No tx_hash for tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24, skipping... (monitor.py:25)
+[2025-06-07 16:18:13,317] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:13,839] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:13,905] INFO: START tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xb6dE0D7B9Ff50624126d0708eC0aa8823bE03C49 (main.py:24)
+[2025-06-07 16:18:14,409] INFO: SUCCESS tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f status=PENDING hash=0x9a369a5f9d03755ce03169ac4f333b88b2292b6d2dc5fd7f778f55399c778102 (main.py:50)
+[2025-06-07 16:18:14,410] INFO: START tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xe7295067dc7fc1bba853AB0FE7eC4545Ee123682 (main.py:24)
+[2025-06-07 16:18:14,986] INFO: SUCCESS tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24 status=PENDING hash=0x137dc0d95af6eab7620283aba1414cc3333ab66fe55a2653c7d3c8b6577815b1 (main.py:50)
+[2025-06-07 16:18:14,987] INFO: START tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7a8D37694896FA72Ed9Cff5F735fdFe6e9d63D7D (main.py:24)
+[2025-06-07 16:18:15,564] INFO: SUCCESS tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030 status=PENDING hash=0x77857e8b237901543fee65d815b18cdfd6ee58b4cb417e9092147de33fc54076 (main.py:50)
+[2025-06-07 16:18:15,564] INFO: START tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8f797D9B1f9917CC1dfF50A1000d13BFD3F9de00 (main.py:24)
+[2025-06-07 16:18:16,133] INFO: SUCCESS tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d status=PENDING hash=0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9 (main.py:50)
+[2025-06-07 16:18:16,134] INFO: START tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xA2d0bf56Fb47E8165B7369f113781CD3df5305a0 (main.py:24)
+[2025-06-07 16:18:16,699] INFO: SUCCESS tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f status=PENDING hash=0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572 (main.py:50)
+[2025-06-07 16:18:21,883] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:22,402] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:26,950] INFO: tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:27,440] INFO: tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:27,713] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:27,995] INFO: tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:28,242] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:28,368] ERROR: Error fetching receipt for tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found. (monitor.py:34)
+[2025-06-07 16:18:28,445] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:28,624] ERROR: Error fetching receipt for tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found. (monitor.py:34)
+[2025-06-07 16:18:28,627] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:33,560] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:34,092] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:39,340] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:39,891] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:44,054] INFO: tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:44,535] INFO: tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:45,082] INFO: tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:45,140] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:45,459] ERROR: Error fetching receipt for tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found. (monitor.py:34)
+[2025-06-07 16:18:45,461] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:45,637] ERROR: Error fetching receipt for tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found. (monitor.py:34)
+[2025-06-07 16:18:45,640] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:45,665] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:50,970] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:51,593] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:56,133] INFO: Worker stopped by user. (main.py:113)
+[2025-06-07 16:29:19,427] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:29:19,559] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:29:19,736] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:29:19,737] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:29:19,981] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:29:20,162] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 16:29:20,695] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 16:29:20,698] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:29:20,698] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:29:20,767] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:29:20,767] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:30:52,766] INFO: Worker stopped by user. (main.py:111)
+[2025-06-07 16:30:56,617] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:30:56,746] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:30:56,925] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:30:56,926] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:30:57,168] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:30:57,344] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 16:30:57,892] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 16:30:57,893] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:30:57,894] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:30:58,025] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:30:58,029] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:31:28,517] CRITICAL: MAIN LOOP CRASH: connection already closed (main.py:107)
+[2025-06-07 16:31:28,518] CRITICAL: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 102, in main
+    txs = db.fetch_waiting_transactions()
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\database.py", line 40, in fetch_waiting_transactions
+    with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+psycopg2.InterfaceError: connection already closed
+ (main.py:108)
+[2025-06-07 16:55:42,622] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:55:42,753] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:55:42,936] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:55:42,937] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:55:43,185] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:55:43,373] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 16:55:43,922] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 16:55:43,924] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:55:43,925] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:55:44,055] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:55:44,056] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:55:44,250] INFO: START tx_id=cd9dee10-8b96-4465-b6bc-96cc82535854 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x94C0c49a1320Ff24B12398456F4E31Cb383EC7e8 (main.py:24)
+[2025-06-07 16:55:44,909] INFO: SUCCESS tx_id=cd9dee10-8b96-4465-b6bc-96cc82535854 status=PENDING hash=0xda3960cbdfe7be69485afcc5a10a42c3c82d587bd58d248da0a28fbdef5d9cf2 (main.py:50)
+[2025-06-07 16:55:44,909] INFO: START tx_id=93a4f1cb-e926-4a0d-bc54-fb199223600c type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7eD11bd28Df85594683125FbF518536Fe859b89a (main.py:24)
+[2025-06-07 16:55:45,519] INFO: SUCCESS tx_id=93a4f1cb-e926-4a0d-bc54-fb199223600c status=PENDING hash=0xb14510d06dd344799847a4b5c530913903e4c222e2018a344ae23f3cafd2b92e (main.py:50)
+[2025-06-07 16:55:45,520] INFO: START tx_id=73808af5-4a86-4061-93af-cb7224d2474d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x24f4ACb5483f6EA23dab711906d5f5D1A43515Dc (main.py:24)
+[2025-06-07 16:55:46,088] INFO: SUCCESS tx_id=73808af5-4a86-4061-93af-cb7224d2474d status=PENDING hash=0x056826a94f0a4df1460b0caeb041fd56973ef388c7897adbaf7ec72b0188fc6c (main.py:50)
+[2025-06-07 16:55:46,089] INFO: START tx_id=a2097af7-22c5-4654-b74a-ccf72c7de892 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xd9Ba1228984fb30A7d0CA58a69C106e527Dd2a49 (main.py:24)
+[2025-06-07 16:55:46,655] INFO: SUCCESS tx_id=a2097af7-22c5-4654-b74a-ccf72c7de892 status=PENDING hash=0xb958a9d0f81719128e5548fffd57d249940e98576d1ccd8f1ea3498bc69f0287 (main.py:50)
+[2025-06-07 17:05:55,953] INFO: START tx_id=fb6b2ea9-fc02-46e4-a7a8-f5d58cdc4154 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x81eD904943686189117fb83d49667c39bA05C306 (main.py:24)
+[2025-06-07 17:05:56,572] INFO: SUCCESS tx_id=fb6b2ea9-fc02-46e4-a7a8-f5d58cdc4154 status=PENDING hash=0xbb7501f35967d11df660d2b1a74c6717a18a9ec7be116ede482ca48fed9286ed (main.py:50)
+[2025-06-07 17:05:56,572] INFO: START tx_id=ef4dbc37-50a2-476a-8327-e36da1e58c76 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7C425ae482100767C5bfcD6608A8A49DFeec2b4A (main.py:24)
+[2025-06-07 17:05:57,225] INFO: SUCCESS tx_id=ef4dbc37-50a2-476a-8327-e36da1e58c76 status=PENDING hash=0x53a3f3e55845bee9bc92ae9ff970c6612cb3ebaa3d06d94456c510f30a47c6c8 (main.py:50)
+[2025-06-07 17:05:57,226] INFO: START tx_id=963722ad-ffdf-4f95-bdd9-d0dec76880f7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7dFB94782749438a681F09a02fed20c31425fa51 (main.py:24)
+[2025-06-07 17:05:57,799] INFO: SUCCESS tx_id=963722ad-ffdf-4f95-bdd9-d0dec76880f7 status=PENDING hash=0x63adddbdddcc593b3547e34efbf03e9a055cfc532caa197c2043584537c65a6e (main.py:50)
+[2025-06-07 17:05:57,800] INFO: START tx_id=45e97414-5ca3-4a06-9386-bdea3f29f3e9 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x0119942d9EfeA3b9F5d9a3CeaA5a8D7c7A858130 (main.py:24)
+[2025-06-07 17:05:58,382] INFO: SUCCESS tx_id=45e97414-5ca3-4a06-9386-bdea3f29f3e9 status=PENDING hash=0x143f0b90ec48d2208d40039430cacbe651ff2f95e11932f9ff8a8d2c2f67a62a (main.py:50)
+[2025-06-07 17:19:26,213] INFO: Worker stopped by user. (main.py:111)
+[2025-06-07 17:28:47,032] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 17:28:47,161] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 17:28:47,339] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 17:28:47,340] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 17:28:47,595] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 17:28:47,777] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 17:28:48,318] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 17:28:48,320] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 17:28:48,320] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 17:28:48,454] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 17:28:48,454] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 17:34:10,507] INFO: Worker stopped by user. (main.py:111)
+[2025-06-07 17:34:15,538] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 17:34:15,668] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 17:34:15,851] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 17:34:15,852] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 17:34:16,097] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 17:34:16,324] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 17:34:16,873] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 17:34:16,875] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 17:34:16,876] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 17:34:17,008] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 17:34:17,009] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 17:34:47,625] INFO: START tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x454b43f82D44Bc943d245C07b27115EC51D4944B (main.py:24)
+[2025-06-07 17:34:47,854] ERROR: FAILED tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:47,862] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:34:48,145] INFO: START tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xD8B1bB5B1bdD301a93EACBf959e4f278096fC7d4 (main.py:24)
+[2025-06-07 17:34:48,384] ERROR: FAILED tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:48,385] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:34:48,593] INFO: START tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc880B5d485b8fCb8f428545bFBef1D4AeDD7Cab6 (main.py:24)
+[2025-06-07 17:34:48,905] ERROR: FAILED tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:48,908] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:34:54,172] INFO: START tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x454b43f82D44Bc943d245C07b27115EC51D4944B (main.py:24)
+[2025-06-07 17:34:54,382] ERROR: FAILED tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:54,383] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:34:54,514] INFO: START tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xD8B1bB5B1bdD301a93EACBf959e4f278096fC7d4 (main.py:24)
+[2025-06-07 17:34:54,723] ERROR: FAILED tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:54,724] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:34:54,919] INFO: START tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc880B5d485b8fCb8f428545bFBef1D4AeDD7Cab6 (main.py:24)
+[2025-06-07 17:34:55,143] ERROR: FAILED tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:34:55,144] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:35:00,480] INFO: START tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x454b43f82D44Bc943d245C07b27115EC51D4944B (main.py:24)
+[2025-06-07 17:35:00,697] ERROR: FAILED tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:35:00,698] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:35:00,827] INFO: START tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xD8B1bB5B1bdD301a93EACBf959e4f278096fC7d4 (main.py:24)
+[2025-06-07 17:35:01,034] ERROR: FAILED tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:35:01,035] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:35:01,226] INFO: START tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc880B5d485b8fCb8f428545bFBef1D4AeDD7Cab6 (main.py:24)
+[2025-06-07 17:35:01,433] ERROR: FAILED tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 error='SignedTransaction' object has no attribute 'rawTransaction' (main.py:54)
+[2025-06-07 17:35:01,434] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 85, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+AttributeError: 'SignedTransaction' object has no attribute 'rawTransaction'
+ (main.py:55)
+[2025-06-07 17:35:18,770] INFO: Worker stopped by user. (main.py:111)
+[2025-06-07 17:35:23,590] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 17:35:23,719] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 17:35:23,900] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 17:35:23,901] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 17:35:24,146] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 17:35:24,330] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 17:35:24,889] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 17:35:24,890] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 17:35:24,891] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 17:35:25,021] INFO: Found 3 lost transactions to process. (main.py:95)
+[2025-06-07 17:35:25,021] INFO: START tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x454b43f82D44Bc943d245C07b27115EC51D4944B (main.py:24)
+[2025-06-07 17:35:25,561] INFO: SUCCESS tx_id=8909e1f3-04db-4124-b865-8801c9ae0d5d status=PENDING hash=0x8035434cc61f04c3c14c5fd6f2d9a9fa63a82340c06fef88b401e3e7f3813c76 (main.py:50)
+[2025-06-07 17:35:25,563] INFO: START tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xD8B1bB5B1bdD301a93EACBf959e4f278096fC7d4 (main.py:24)
+[2025-06-07 17:35:26,184] INFO: SUCCESS tx_id=d007ae11-84d1-4208-8a6b-d2d2c7d1d161 status=PENDING hash=0xe96c7dd26090d147ea399647b16e92d443cb4241f1399cf2ad37c6af7d71565a (main.py:50)
+[2025-06-07 17:35:26,185] INFO: START tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xc880B5d485b8fCb8f428545bFBef1D4AeDD7Cab6 (main.py:24)
+[2025-06-07 17:35:26,756] INFO: SUCCESS tx_id=fd297d3a-449f-48b2-8f89-9115dacd2de5 status=PENDING hash=0x79cbb07b960a6d3de34fe89f1a4ab34befdbf819d546b5c6925c594e8ca7f52d (main.py:50)
+[2025-06-07 17:35:26,757] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 22:27:24,786] INFO: START tx_id=a43a9501-b08e-4205-ada5-aa73e9fbbc5f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x18C836536dCF56dcA19afF5C0730e71d7B46B3fE (main.py:24)
+[2025-06-07 22:27:25,383] INFO: SUCCESS tx_id=a43a9501-b08e-4205-ada5-aa73e9fbbc5f status=PENDING hash=0x6b07df185eb62f7d1e5c8d2a8992a1fd5b10c04d4b764de0b789e8785bf8241c (main.py:50)
+[2025-06-07 22:35:33,097] INFO: Worker stopped by user. (main.py:111)
+[2025-06-07 22:37:20,169] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 22:37:20,310] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 22:37:20,471] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 22:37:20,472] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 22:37:20,718] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 22:37:20,880] WARNING: Main account balance is too low. Current balance: 0.003272631823454632 ETH (checker.py:49)
+[2025-06-07 22:37:21,395] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99980.0 tokens (checker.py:68)
+[2025-06-07 22:37:21,396] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 22:37:21,397] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 22:37:21,529] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 22:37:21,530] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 22:39:38,587] INFO: START tx_id=e533b1a5-2d8e-42f3-aad5-fa9585c841ff type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xC436106D808AbFB422AB1E2cbC3381A2e48253bF (main.py:24)
+[2025-06-07 22:39:39,828] INFO: SUCCESS tx_id=e533b1a5-2d8e-42f3-aad5-fa9585c841ff status=PENDING hash=0xf6e21d314675c8bd24d4e8ef0d8442f1d6e7532479f8c27e73b1c650a62085cd (main.py:50)
+[2025-06-07 22:41:37,030] INFO: START tx_id=41221139-3738-4acc-9114-f9bffa7cdba4 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xb7173595BBdE88344BEB98A5A08066117c3D8247 (main.py:24)
+[2025-06-07 22:41:38,341] INFO: SUCCESS tx_id=41221139-3738-4acc-9114-f9bffa7cdba4 status=PENDING hash=0xd1b0a0fde240003f617d0c8317a9109eb1900b7919e7295847979dbcef0b696f (main.py:50)
+[2025-06-07 22:41:38,342] INFO: START tx_id=647e2be7-bfa2-4fb4-bade-994874c40095 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6Fb626c9bA92f2d00B09Ea3CFc30D6DC3c2e8846 (main.py:24)
+[2025-06-07 22:41:39,187] INFO: SUCCESS tx_id=647e2be7-bfa2-4fb4-bade-994874c40095 status=PENDING hash=0x3766b867d888931851764a7ac1149e7b4b11ccac2e2d5e8135d5badc4dc5612b (main.py:50)
+[2025-06-07 22:41:44,268] INFO: START tx_id=f28e1fb0-3990-491e-a61b-c0ea26a6b6b9 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6Ea526aa47CC5a45012703946cf8584175181a6e (main.py:24)
+[2025-06-07 22:41:45,052] INFO: SUCCESS tx_id=f28e1fb0-3990-491e-a61b-c0ea26a6b6b9 status=PENDING hash=0x11d8e928d9e66718aaf42f737d307ea28c75d4389e480930bb69b912a6b30405 (main.py:50)
+[2025-06-07 22:41:45,053] INFO: START tx_id=790786da-4400-4b81-8dd1-b51f13869d3f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x1253b7128edd34a830262F265810B10D6F35a926 (main.py:24)
+[2025-06-07 22:41:45,906] INFO: SUCCESS tx_id=790786da-4400-4b81-8dd1-b51f13869d3f status=PENDING hash=0x0e31342aa1a0165d0a9ee5fc342b569d3c5919ddb448af0c027c63e5a43e6563 (main.py:50)
+[2025-06-07 22:41:45,907] INFO: START tx_id=f878ff58-910b-44bd-8b20-40645e878840 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x9160498b2DECc947D93816368894a4fc84895914 (main.py:24)
+[2025-06-07 22:41:46,744] INFO: SUCCESS tx_id=f878ff58-910b-44bd-8b20-40645e878840 status=PENDING hash=0xf2a86c4fe6f5be6788604ba43ff4fb2df481f659a9b3910ce1131b957f90865d (main.py:50)
+[2025-06-07 22:41:46,745] INFO: START tx_id=d2c3282f-15a5-4de3-a04b-764ce1081fa8 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x871f93990d7D13315476222Ee3fAf5B077d89486 (main.py:24)
+[2025-06-07 22:41:47,600] INFO: SUCCESS tx_id=d2c3282f-15a5-4de3-a04b-764ce1081fa8 status=PENDING hash=0x5f4969a4e910c210871283062880e760d23c359d9bd517e60e56db4ef33d83d8 (main.py:50)
+[2025-06-07 22:41:47,600] INFO: START tx_id=abc30e10-df8e-4952-8d70-3d501f9bbc67 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x66d349a200e8bf8f7aab16dF148adfeE126275Fc (main.py:24)
+[2025-06-07 22:41:48,448] INFO: SUCCESS tx_id=abc30e10-df8e-4952-8d70-3d501f9bbc67 status=PENDING hash=0x150d07959f4f21dcf4bd1ef19afb3704651cf9058dc2b7ed3d2b98e40bfe9b48 (main.py:50)
+[2025-06-07 22:41:48,449] INFO: START tx_id=23f52c2e-e2a0-4ef3-879d-c93a949ec413 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xEAA8ddA6F7BB424b1e23Dca544Ba0B7f42b16da9 (main.py:24)
+[2025-06-07 22:41:49,299] INFO: SUCCESS tx_id=23f52c2e-e2a0-4ef3-879d-c93a949ec413 status=PENDING hash=0xa0b515c2fef4fcc904b9d2ceafa8d147bbc78e4bcbf463dca630ffc422491e6f (main.py:50)
+[2025-06-07 22:41:49,299] INFO: START tx_id=9741a1ad-8998-4cf4-ae58-50c130f9b49e type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x3E953F3c9480270e853FbC4d3c4Ae0Df42Dc4B6c (main.py:24)
+[2025-06-07 22:41:50,233] INFO: SUCCESS tx_id=9741a1ad-8998-4cf4-ae58-50c130f9b49e status=PENDING hash=0x7c953108c6bf031501b9e7c56d0ff8b07eb5e10e8d5fd2b8424ae1c61bbc8b4d (main.py:50)
+[2025-06-07 22:41:50,234] INFO: START tx_id=fa3b8cb6-3515-45b2-98d1-612ac53fd949 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x190Ade9322E65A0a4ad0BaAd0286Cda2BB6C171C (main.py:24)
+[2025-06-07 22:41:51,086] INFO: SUCCESS tx_id=fa3b8cb6-3515-45b2-98d1-612ac53fd949 status=PENDING hash=0xa6b1b8b667476eeeda12b32a580e04683bd4373cf0f6150c130fce89c0598b38 (main.py:50)
+[2025-06-07 22:41:51,087] INFO: START tx_id=fa148ff5-888a-42da-a8ae-d2197b565d49 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x33F576e88b00f3CEE5C04bb558E17F74A4D02ebe (main.py:24)
+[2025-06-07 22:41:52,260] INFO: SUCCESS tx_id=fa148ff5-888a-42da-a8ae-d2197b565d49 status=PENDING hash=0x03c0378d1ede5c4d58b54d96bb78468979f72cea994cce88927eda64ceb99fe7 (main.py:50)
+[2025-06-07 22:41:52,262] INFO: START tx_id=fe07ab65-8953-466a-bc14-aebeaf3bb012 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xeB003A1fec70eC7DF6a22DD19746D326736632c1 (main.py:24)
+[2025-06-07 22:41:53,116] INFO: SUCCESS tx_id=fe07ab65-8953-466a-bc14-aebeaf3bb012 status=PENDING hash=0xe908cc85f5c63a6dbbd005be3ee570b39d2b0b91084f48228fd73c628a7e3620 (main.py:50)
+[2025-06-07 22:41:53,117] INFO: START tx_id=0d536923-745b-49fb-8d83-1cb7c4340adc type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xb1e6a40D3500D51F1cEBc8f386d565B48F4C9B27 (main.py:24)
+[2025-06-07 22:41:54,013] INFO: SUCCESS tx_id=0d536923-745b-49fb-8d83-1cb7c4340adc status=PENDING hash=0xbf6876e4bd0c6cbe6a5249a0b11c5f6941044f3ff30ec9a29808cea0798e1a49 (main.py:50)
+[2025-06-07 22:41:59,166] INFO: START tx_id=c737c89b-3296-4cfd-98e6-6a3b60e7eef6 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6E2859728cFe7b9D94ceE01B05A104E90e73c19F (main.py:24)
+[2025-06-07 22:41:59,966] INFO: SUCCESS tx_id=c737c89b-3296-4cfd-98e6-6a3b60e7eef6 status=PENDING hash=0x5b4ad917d64428c6a66a636edd60cc8584b267cb9eeb804e005dd941618e1caf (main.py:50)
+[2025-06-07 22:41:59,967] INFO: START tx_id=368c6ae7-b10c-45cc-bbe5-dba43c77ea0b type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xB6A695d08e3850dA969896Ca6834b96bE5D3EFd4 (main.py:24)
+[2025-06-07 22:42:00,837] INFO: SUCCESS tx_id=368c6ae7-b10c-45cc-bbe5-dba43c77ea0b status=PENDING hash=0xe4928f7d113ceff7b24181aa51fd95bcd8bd324020df7f945f2409e7e2355a51 (main.py:50)
+[2025-06-07 22:42:00,838] INFO: START tx_id=292a8337-407a-4d3e-b995-9835d835b4bd type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x2A9f3fE06D86Ebba090d1C4ab17Ccff5aA64E409 (main.py:24)
+[2025-06-07 22:42:01,697] INFO: SUCCESS tx_id=292a8337-407a-4d3e-b995-9835d835b4bd status=PENDING hash=0xd7f30b421c51d5d7323510e0125f795b4f1a581b23e7800281399fe31e30b5fb (main.py:50)
+[2025-06-07 22:42:01,698] INFO: START tx_id=e2c43612-c139-4a96-94a5-6166061c2613 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xeD3D357bFdec1eCaf2F9493EFBc8F1ee132dFA30 (main.py:24)
+[2025-06-07 22:42:02,590] INFO: SUCCESS tx_id=e2c43612-c139-4a96-94a5-6166061c2613 status=PENDING hash=0xa75e4489376252719bfc944c762694b9314d1853fae025942b9bdeb21005cecb (main.py:50)
+[2025-06-07 22:42:02,591] INFO: START tx_id=114f9d1e-d181-4f02-bd6b-b0bec849aa3d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x2Db46BBDDe0E49284F7974AAC2044A5Ee51F2d9f (main.py:24)
+[2025-06-07 22:42:03,446] INFO: SUCCESS tx_id=114f9d1e-d181-4f02-bd6b-b0bec849aa3d status=PENDING hash=0xa557a80343e1f13ccf1b3575ed01ff89bfda3a91eb68e4aae3056b1a9772fa39 (main.py:50)
+[2025-06-07 22:42:03,447] INFO: START tx_id=f8c5efe1-f9f3-4244-a220-d7903db6d6ea type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x097FA51CF7c89f5E1cB2f5E7dBb1ce829f058aEa (main.py:24)
+[2025-06-07 22:42:04,314] INFO: SUCCESS tx_id=f8c5efe1-f9f3-4244-a220-d7903db6d6ea status=PENDING hash=0x4bf7b7d955c5afd1b0afe668d0debd07f756083a6dcaa66229856400829543a1 (main.py:50)
+[2025-06-07 22:42:04,315] INFO: START tx_id=1a1790a4-2829-486c-b936-8ce2153fbec4 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x13c002c259a3d8ce4b968477deA86E00361561e3 (main.py:24)
+[2025-06-07 22:42:05,231] INFO: SUCCESS tx_id=1a1790a4-2829-486c-b936-8ce2153fbec4 status=PENDING hash=0xe0547965f04348c698fa3bfb9a8fcf54ae053465d9279405dcf588cf2cf21f28 (main.py:50)
+[2025-06-08 00:10:54,845] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 00:11:05,354] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 00:11:05,487] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 00:11:05,689] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 00:11:05,690] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 00:11:05,950] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 00:11:06,107] WARNING: Main account balance is too low. Current balance: 0.000673614341231007 ETH (checker.py:49)
+[2025-06-08 00:11:06,604] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99967.0 tokens (checker.py:68)
+[2025-06-08 00:11:06,606] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 00:11:06,606] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 00:11:06,736] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 00:11:06,738] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 00:25:20,107] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 00:26:22,471] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 00:26:22,600] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 00:26:22,761] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 00:26:22,762] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 00:26:22,981] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 00:26:23,139] WARNING: Main account balance is too low. Current balance: 0.030751031590183244 ETH (checker.py:49)
+[2025-06-08 00:26:23,618] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69965.0 tokens (checker.py:68)
+[2025-06-08 00:26:23,619] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 00:26:23,620] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 00:26:23,752] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 00:26:23,753] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 00:29:06,555] INFO: START tx_id=7018074a-094f-4f87-a2e7-f55f90b7adfb type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE5610171E6fdDc7144Ce589B01A6D58Bca5772E9 (main.py:24)
+[2025-06-08 00:29:07,937] INFO: SUCCESS tx_id=7018074a-094f-4f87-a2e7-f55f90b7adfb status=PENDING hash=0x676c3f9f46a01d81e038de8533abf13dc3fa3ce465653ea0ddf09f0b3fbfdf3d (main.py:50)
+[2025-06-08 00:29:13,013] INFO: START tx_id=5afb331b-53e8-4e12-8891-1c45bd666af3 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xD2dcf59db9F73501b485637DF61F636bD4E36B2A (main.py:24)
+[2025-06-08 00:29:13,818] INFO: SUCCESS tx_id=5afb331b-53e8-4e12-8891-1c45bd666af3 status=PENDING hash=0x444c127ae5a5878e027563d8e9d6171f44feb45aab684680a9c23111bed6a3cf (main.py:50)
+[2025-06-08 00:29:18,965] INFO: START tx_id=7071e54b-3c0e-4a0f-9b9a-6948b7768710 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x41EccD4f80dDa1D778DD9433f6c09b98fa8fCd8D (main.py:24)
+[2025-06-08 00:29:19,787] INFO: SUCCESS tx_id=7071e54b-3c0e-4a0f-9b9a-6948b7768710 status=PENDING hash=0xdb9ec578e6121626ff11d7a1c2dd7912302a21c62b94daa1f1867298f369698d (main.py:50)
+[2025-06-08 00:29:19,788] INFO: START tx_id=64737fa6-3993-4089-8bbe-5796dae6daab type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x40E77A96A6676387901B785317D993A1E8Fa3212 (main.py:24)
+[2025-06-08 00:29:20,636] INFO: SUCCESS tx_id=64737fa6-3993-4089-8bbe-5796dae6daab status=PENDING hash=0x0a63858dfab95b3dbd11759b279cc95847706e1519fe599ce1486bc8cfaa79cc (main.py:50)
+[2025-06-08 00:29:25,781] INFO: START tx_id=4cb320cc-507d-4279-8bd3-5613b9f6e872 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x93A1Ee8FdCFfB14d91fa0476Abb8f26803198B01 (main.py:24)
+[2025-06-08 00:29:26,560] INFO: SUCCESS tx_id=4cb320cc-507d-4279-8bd3-5613b9f6e872 status=PENDING hash=0x7e8f551e372c2be208f9a6d03ab182611abf9da8fd7247145e246e59319e3453 (main.py:50)
+[2025-06-08 00:29:26,561] INFO: START tx_id=5b31bd3f-51c8-43ea-abd8-87152d1d6349 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6e4D791EdAdC055f7d58e45D47332ADa15ed430A (main.py:24)
+[2025-06-08 00:29:27,430] INFO: SUCCESS tx_id=5b31bd3f-51c8-43ea-abd8-87152d1d6349 status=PENDING hash=0x7c658e884df0d0efe2e1d987f1fa70ecd9f29b5c93a0d66ce96a66f74d493d76 (main.py:50)
+[2025-06-08 00:29:32,561] INFO: START tx_id=2f9e06fd-38a4-47c4-876d-550782334f0d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xCae65625504aAfd6fd51eC6fdD6C896CA39C2C38 (main.py:24)
+[2025-06-08 00:29:33,338] INFO: SUCCESS tx_id=2f9e06fd-38a4-47c4-876d-550782334f0d status=PENDING hash=0x85f2e1cc7ca75a9917d35bc362f42605beb294e2eeb16b7c5f4992d1273c4cce (main.py:50)
+[2025-06-08 00:29:33,338] INFO: START tx_id=d5b4a4db-9316-4a83-9a01-c7aa077b94c4 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x47eE5e9Df08f2E9302F1D94150EC38B0481c9336 (main.py:24)
+[2025-06-08 00:29:34,177] INFO: SUCCESS tx_id=d5b4a4db-9316-4a83-9a01-c7aa077b94c4 status=PENDING hash=0x3501f349f01ccc8f2ba93153fb98d6cdc0f92ebf4eb5d0cddd345a437abf9338 (main.py:50)
+[2025-06-08 00:29:39,333] INFO: START tx_id=87845c60-5c4c-4ab4-8644-0b02c8b752f1 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x1c69D1B7eA5a0483B27D46F3C7bdA242B9A54061 (main.py:24)
+[2025-06-08 00:29:40,125] INFO: SUCCESS tx_id=87845c60-5c4c-4ab4-8644-0b02c8b752f1 status=PENDING hash=0x104e25650263d50ebf7469f962f3fd90b09b3452ec67bf79deffef70695e1ef8 (main.py:50)
+[2025-06-08 00:29:40,126] INFO: START tx_id=b1aa4e2e-9ebe-433a-8238-b85db8b3f695 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xA1c967d163eecFB9D0DBFbb88547EFcEa9901799 (main.py:24)
+[2025-06-08 00:29:40,962] INFO: SUCCESS tx_id=b1aa4e2e-9ebe-433a-8238-b85db8b3f695 status=PENDING hash=0x6313ec043fded25f36effbc47a9e8e4639e0e8f771cc8bd8a9e8b80e4b49d577 (main.py:50)
+[2025-06-08 00:29:46,098] INFO: START tx_id=0c28286d-55e6-490b-a821-35a4ec37cee8 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x78BB2e50D883a14AE4b523785EC044D31bdce579 (main.py:24)
+[2025-06-08 00:29:46,896] INFO: SUCCESS tx_id=0c28286d-55e6-490b-a821-35a4ec37cee8 status=PENDING hash=0x78ff21a9c604676f0c33917fe8c2807711eba07a850c1b94e537a9c82d6bfb20 (main.py:50)
+[2025-06-08 00:29:46,897] INFO: START tx_id=ceecd017-3cb2-4935-8f52-b7739823295d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x6213771b09c63455d42354557Cc96E62209ff955 (main.py:24)
+[2025-06-08 00:29:47,797] INFO: SUCCESS tx_id=ceecd017-3cb2-4935-8f52-b7739823295d status=PENDING hash=0xdd90fa7c920a71635ab3432fa5855c9414cffffe4ba2f9d7fd5cb2da81257030 (main.py:50)
+[2025-06-08 00:29:52,939] INFO: START tx_id=3eedb888-24d9-45ac-941e-ad05e9f61a31 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xF8f22a13d84e06FA861D2341bb3c1368c59c3bf9 (main.py:24)
+[2025-06-08 00:29:53,724] INFO: SUCCESS tx_id=3eedb888-24d9-45ac-941e-ad05e9f61a31 status=PENDING hash=0x67f236f10ae805c1d5a931f107645339792d5811bb1ac4f20948af2936ce5fbb (main.py:50)
+[2025-06-08 00:29:58,866] INFO: START tx_id=b3317f05-1793-42ac-8723-406889770b48 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x3b06bF3c0FD2880589D639a677c09CB015C5F5c9 (main.py:24)
+[2025-06-08 00:29:59,650] INFO: SUCCESS tx_id=b3317f05-1793-42ac-8723-406889770b48 status=PENDING hash=0xf75b0f5019a1a8f6d6d9e3073ab88da33caad7794733e2fdfc81ec6da5188131 (main.py:50)
+[2025-06-08 00:29:59,651] INFO: START tx_id=494b452e-c668-43cc-8703-4cea02b98762 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x2Baf6F901F44371BE65911c9a2e01351c6854136 (main.py:24)
+[2025-06-08 00:30:00,494] INFO: SUCCESS tx_id=494b452e-c668-43cc-8703-4cea02b98762 status=PENDING hash=0xa20c84ba087d1e77d9cc4ca3a8f2d8f4b8d8e5e50082ff82ee5b2ed6466e9c18 (main.py:50)
+[2025-06-08 00:30:05,672] INFO: START tx_id=8f9ad061-f4f7-4556-8c09-9e1cb7c314df type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x0Fe36c99edAACa681EbE94cA143cdB4f387FaE52 (main.py:24)
+[2025-06-08 00:30:06,746] INFO: SUCCESS tx_id=8f9ad061-f4f7-4556-8c09-9e1cb7c314df status=PENDING hash=0x012ea0532bc3c41761bf0c1f908e3b744bdd2488e0200673b9675888eb16c0cf (main.py:50)
+[2025-06-08 00:30:06,747] INFO: START tx_id=97c6c582-9344-4d50-b400-4343722b1ba9 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xC017aDC7568337C29Bd3baCfAE6c40C95C769267 (main.py:24)
+[2025-06-08 00:30:07,694] INFO: SUCCESS tx_id=97c6c582-9344-4d50-b400-4343722b1ba9 status=PENDING hash=0xd59d588ab4d6ad9bb974f3122dd5bbab3b2f14867760fb1f60f3d11c72880429 (main.py:50)
+[2025-06-08 00:30:14,970] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 00:32:08,693] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 00:32:08,826] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 00:32:09,002] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 00:32:09,003] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 00:32:09,243] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 00:32:09,412] WARNING: Main account balance is too low. Current balance: 0.030751031590183244 ETH (checker.py:49)
+[2025-06-08 00:32:09,930] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69965.0 tokens (checker.py:68)
+[2025-06-08 00:32:09,931] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 00:32:09,932] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 00:32:10,065] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 00:32:10,068] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 00:33:09,738] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 00:35:37,637] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 00:35:37,771] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 00:35:37,929] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 00:35:37,930] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 00:35:38,196] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 00:35:38,357] WARNING: Main account balance is too low. Current balance: 0.030751031590183244 ETH (checker.py:49)
+[2025-06-08 00:35:38,839] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69965.0 tokens (checker.py:68)
+[2025-06-08 00:35:38,841] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 00:35:38,841] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 00:35:38,983] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 00:35:38,984] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 00:37:51,000] INFO: START tx_id=5d3ca529-8e59-4ea7-aab5-091e8a66e16b type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7Fb049e98a2Ee3dcA204D6a3987A82833C871dE9 (main.py:24)
+[2025-06-08 00:37:52,242] INFO: SUCCESS tx_id=5d3ca529-8e59-4ea7-aab5-091e8a66e16b status=PENDING hash=0x8d12c7c34883f26f1c714dcae10d77a82ff7c0d4d04c6c8f7d369eed48770e8a (main.py:50)
+[2025-06-08 00:40:33,587] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 00:52:28,749] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 00:52:28,878] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 00:52:29,035] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 00:52:29,035] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 00:52:29,257] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 00:52:29,418] WARNING: Main account balance is too low. Current balance: 0.030751031590183244 ETH (checker.py:49)
+[2025-06-08 00:52:29,893] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69965.0 tokens (checker.py:68)
+[2025-06-08 00:52:29,894] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 00:52:29,895] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 00:52:30,024] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 00:52:30,025] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 00:54:21,794] INFO: START tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x07801fFa12E04a42DEB6654b7d16BF22C246aDd3 (main.py:24)
+[2025-06-08 00:54:22,689] ERROR: FAILED tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b error=401 Client Error: Unauthorized for url: https://gas.api.infura.io/networks/1/suggestedGasFees (main.py:54)
+[2025-06-08 00:54:22,711] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 66, in send_token
+    gas_fees = self.get_gas_fee("high")
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 286, in get_gas_fee
+    r.raise_for_status()
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://gas.api.infura.io/networks/1/suggestedGasFees
+ (main.py:55)
+[2025-06-08 00:54:27,905] INFO: START tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x07801fFa12E04a42DEB6654b7d16BF22C246aDd3 (main.py:24)
+[2025-06-08 00:54:28,489] ERROR: FAILED tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b error=401 Client Error: Unauthorized for url: https://gas.api.infura.io/networks/1/suggestedGasFees (main.py:54)
+[2025-06-08 00:54:28,490] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 66, in send_token
+    gas_fees = self.get_gas_fee("high")
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 286, in get_gas_fee
+    r.raise_for_status()
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://gas.api.infura.io/networks/1/suggestedGasFees
+ (main.py:55)
+[2025-06-08 00:54:28,986] INFO: Worker stopped by user. (main.py:111)

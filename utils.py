@@ -4,6 +4,7 @@ import time
 from typing import Optional
 import logging
 from logging.handlers import RotatingFileHandler
+import threading
 
 def call_callback_url(callback_url: str, data: dict, retries: int = 3, timeout: int = 5) -> bool:
     """
@@ -84,4 +85,24 @@ def setup_logger(logfile="web3worker.log"):
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
     return logger
+
+# utils.py
+
+class NonceManager:
+    def __init__(self, w3, address):
+        self._lock = threading.Lock()
+        self._w3 = w3
+        self._address = address
+        self._nonce = self._w3.eth.get_transaction_count(self._address, 'pending')
+
+    def get_next_nonce(self):
+        with self._lock:
+            nonce = self._nonce
+            self._nonce += 1
+            return nonce
+
+    def set_nonce(self, nonce):
+        with self._lock:
+            self._nonce = nonce
+
 

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e4bfa6e-28ba-4818-b299-8c71c9d8b185" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e09b009-a69f-4598-a7c0-15f3ec2125e3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e09b009-a69f-4598-a7c0-15f3ec2125e3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e09b009-a69f-4598-a7c0-15f3ec2125e3/storage_v2/_src_/database/cryptoworker.f-9vbw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e09b009-a69f-4598-a7c0-15f3ec2125e3/storage_v2/_src_/database/cryptoworker.f-9vbw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/checker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ethereum.py" beforeDir="false" afterPath="$PROJECT_DIR$/ethereum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uniswap.py" beforeDir="false" afterPath="$PROJECT_DIR$/uniswap.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web3worker.log" beforeDir="false" afterPath="$PROJECT_DIR$/web3worker.log" afterDir="false" />
@@ -63,6 +67,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Luka\PycharmProjects\CryptoWorker" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +92,7 @@
       <workItem from="1748993165882" duration="8163000" />
       <workItem from="1749012601618" duration="2386000" />
       <workItem from="1749015018604" duration="6795000" />
-      <workItem from="1749158435136" duration="12054000" />
+      <workItem from="1749158435136" duration="34407000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

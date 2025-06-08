@@ -1,0 +1,432 @@
+[2025-06-07 16:05:33,491] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:05:33,621] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:05:33,836] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:05:33,837] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:05:34,117] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:05:34,305] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:34,897] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:34,900] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:05:34,903] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:05:34,970] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:05:34,972] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:05:35,115] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:35,149] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:35,746] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:35,747] INFO: Monitor started: confirmations_required=3, poll_interval=15s (monitor.py:17)
+[2025-06-07 16:05:35,773] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:35,879] ERROR: Error fetching receipt for tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660 (monitor.py:34)
+[2025-06-07 16:05:35,895] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660
+ (monitor.py:35)
+[2025-06-07 16:05:35,896] ERROR: Error fetching receipt for tx_id=a2859f11-138f-490b-89f0-4bdc223072ea: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861 (monitor.py:34)
+[2025-06-07 16:05:35,897] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861
+ (monitor.py:35)
+[2025-06-07 16:05:35,898] ERROR: Error fetching receipt for tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472 (monitor.py:34)
+[2025-06-07 16:05:35,899] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472
+ (monitor.py:35)
+[2025-06-07 16:05:35,900] ERROR: Error fetching receipt for tx_id=957b5186-e4b6-446a-bf46-322568f79139: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014 (monitor.py:34)
+[2025-06-07 16:05:35,902] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014
+ (monitor.py:35)
+[2025-06-07 16:05:35,903] ERROR: Error fetching receipt for tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161 (monitor.py:34)
+[2025-06-07 16:05:35,904] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161
+ (monitor.py:35)
+[2025-06-07 16:05:35,905] ERROR: Error fetching receipt for tx_id=ca954026-57be-4506-b883-dd82d46af279: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441 (monitor.py:34)
+[2025-06-07 16:05:35,906] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441
+ (monitor.py:35)
+[2025-06-07 16:05:35,908] ERROR: Error fetching receipt for tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94 (monitor.py:34)
+[2025-06-07 16:05:35,909] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94
+ (monitor.py:35)
+[2025-06-07 16:05:35,910] ERROR: Error fetching receipt for tx_id=229842c2-5d66-4696-8683-2538436cf320: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8 (monitor.py:34)
+[2025-06-07 16:05:35,911] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8
+ (monitor.py:35)
+[2025-06-07 16:05:35,912] ERROR: Error fetching receipt for tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192 (monitor.py:34)
+[2025-06-07 16:05:35,913] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192
+ (monitor.py:35)
+[2025-06-07 16:05:35,914] ERROR: Error fetching receipt for tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760 (monitor.py:34)
+[2025-06-07 16:05:35,925] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760
+ (monitor.py:35)
+[2025-06-07 16:05:35,926] ERROR: Error fetching receipt for tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7 (monitor.py:34)
+[2025-06-07 16:05:35,927] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7
+ (monitor.py:35)
+[2025-06-07 16:05:35,928] ERROR: Error fetching receipt for tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8 (monitor.py:34)
+[2025-06-07 16:05:35,930] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8
+ (monitor.py:35)
+[2025-06-07 16:05:35,931] ERROR: Error fetching receipt for tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40 (monitor.py:34)
+[2025-06-07 16:05:35,932] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40
+ (monitor.py:35)
+[2025-06-07 16:05:35,933] ERROR: Error fetching receipt for tx_id=817dda13-2045-49fd-bedd-1939fe1926c4: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d (monitor.py:34)
+[2025-06-07 16:05:35,934] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d
+ (monitor.py:35)
+[2025-06-07 16:05:35,935] ERROR: Error fetching receipt for tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9 (monitor.py:34)
+[2025-06-07 16:05:35,937] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9
+ (monitor.py:35)
+[2025-06-07 16:05:41,062] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:41,637] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:46,886] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:47,453] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:51,013] ERROR: Error fetching receipt for tx_id=23f4ab3b-5f37-4358-948b-47d09e9c82e6: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660 (monitor.py:34)
+[2025-06-07 16:05:51,016] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: aae16bbdd8459a13439f33f10fe8ecaded64179aa5a8bd0bab6250bbfbf4e660
+ (monitor.py:35)
+[2025-06-07 16:05:51,019] ERROR: Error fetching receipt for tx_id=a2859f11-138f-490b-89f0-4bdc223072ea: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861 (monitor.py:34)
+[2025-06-07 16:05:51,023] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: bc3e7a41d20e9d4e1599db28401c1ec978754231b7aef687b9db664b2ec65861
+ (monitor.py:35)
+[2025-06-07 16:05:51,026] ERROR: Error fetching receipt for tx_id=392eb90d-25ef-466b-bf82-fc6938c4d536: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472 (monitor.py:34)
+[2025-06-07 16:05:51,029] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb568c7802cb7e0873e9ae7219ea3913dce22252bb7ba212ce4f3d2951f65472
+ (monitor.py:35)
+[2025-06-07 16:05:51,033] ERROR: Error fetching receipt for tx_id=957b5186-e4b6-446a-bf46-322568f79139: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014 (monitor.py:34)
+[2025-06-07 16:05:51,036] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 0f5f3541eef6b57f5ac0333d749138e5de2ed21675059593c4c3ff6aa95fa014
+ (monitor.py:35)
+[2025-06-07 16:05:51,040] ERROR: Error fetching receipt for tx_id=8d5b989e-7839-45ec-bf42-203fabb07ce0: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161 (monitor.py:34)
+[2025-06-07 16:05:51,043] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 47b2d236fe0cba3995d081419c2636a23e8be2a1639a454a9aeaf3f440796161
+ (monitor.py:35)
+[2025-06-07 16:05:51,046] ERROR: Error fetching receipt for tx_id=ca954026-57be-4506-b883-dd82d46af279: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441 (monitor.py:34)
+[2025-06-07 16:05:51,048] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 6e96851566efe26c73aca051009f192d0733f538acd7b6d1a51903f68a586441
+ (monitor.py:35)
+[2025-06-07 16:05:51,050] ERROR: Error fetching receipt for tx_id=dcd5a7df-fb5d-464f-8a98-d40973e135f7: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94 (monitor.py:34)
+[2025-06-07 16:05:51,052] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 3536ddcc60f190afaab21ccb8e29578d5281a58b9302f7a2d09992bf17053d94
+ (monitor.py:35)
+[2025-06-07 16:05:51,054] ERROR: Error fetching receipt for tx_id=229842c2-5d66-4696-8683-2538436cf320: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8 (monitor.py:34)
+[2025-06-07 16:05:51,056] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2d0d0ed7a9c8dd2652731e3689f658b5928338ef471b8246da41da2dc09537e8
+ (monitor.py:35)
+[2025-06-07 16:05:51,058] ERROR: Error fetching receipt for tx_id=ff449015-d7fb-4aff-9dc9-74ef74c41f86: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192 (monitor.py:34)
+[2025-06-07 16:05:51,060] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9f78ec35bde5d84138a73dbeac85c7ae20f6af0c2fd79c0ed4f18af53c487192
+ (monitor.py:35)
+[2025-06-07 16:05:51,061] ERROR: Error fetching receipt for tx_id=19c8d252-188d-4843-8d3e-c7b7a01dcb5a: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760 (monitor.py:34)
+[2025-06-07 16:05:51,063] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 7675fe6fe8374e29ec9d5c7fe211a0cec72f8f58f774e01ad1bfaed9dfd28760
+ (monitor.py:35)
+[2025-06-07 16:05:51,064] ERROR: Error fetching receipt for tx_id=5cec15d9-af9d-4fb2-b0cb-99475cbd3e6c: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7 (monitor.py:34)
+[2025-06-07 16:05:51,066] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 9af35bc675a0f1c7060d852ea3e1aa5428c4d9eaa3c4c9351b04ab39a7aa6dd7
+ (monitor.py:35)
+[2025-06-07 16:05:51,067] ERROR: Error fetching receipt for tx_id=e85ade4c-7585-4cc9-8fe8-32e603ffb05e: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8 (monitor.py:34)
+[2025-06-07 16:05:51,069] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 2a5bb74280b2fa782ac1273c822589e8e50c0e408c61db3b1d4c514211d59bd8
+ (monitor.py:35)
+[2025-06-07 16:05:51,070] ERROR: Error fetching receipt for tx_id=f0a8938b-5f6f-4921-a952-2021eea33ccf: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40 (monitor.py:34)
+[2025-06-07 16:05:51,073] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: cb5397427c94317762bd3bc7e098202a4fda16b64c24fdecdd5afd19a1d98d40
+ (monitor.py:35)
+[2025-06-07 16:05:51,074] ERROR: Error fetching receipt for tx_id=817dda13-2045-49fd-bedd-1939fe1926c4: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d (monitor.py:34)
+[2025-06-07 16:05:51,076] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: ac3bfa0cd3961b8df105ca2d1621bc776483d4e864d722fbca78bf672ab24d4d
+ (monitor.py:35)
+[2025-06-07 16:05:51,078] ERROR: Error fetching receipt for tx_id=0c0dccae-25a3-429d-a4d6-90b094cb6147: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9 (monitor.py:34)
+[2025-06-07 16:05:51,079] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 231, in get_transaction_receipt
+    raise ValueError(f"Invalid transaction hash: {tx_hash}")
+ValueError: Invalid transaction hash: 20645cd7e97ee43a6039d09f9a0fe445d4964f1faa227d9be01e43d0612db9a9
+ (monitor.py:35)
+[2025-06-07 16:05:52,694] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:05:53,261] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:05:57,228] INFO: Worker stopped by user. (main.py:113)
+[2025-06-07 16:17:54,149] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-07 16:17:54,278] INFO: Database connection status: True (checker.py:19)
+[2025-06-07 16:17:54,460] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-07 16:17:54,461] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-07 16:17:54,712] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-07 16:17:54,901] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:55,468] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:17:55,470] INFO: Starting main worker loop... (main.py:88)
+[2025-06-07 16:17:55,473] INFO: Processing lost transactions... (main.py:90)
+[2025-06-07 16:17:55,540] INFO: No lost transactions found. (main.py:93)
+[2025-06-07 16:17:55,541] INFO: Processing pending transactions... (main.py:99)
+[2025-06-07 16:17:55,696] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:55,734] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:17:56,249] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:17:56,250] INFO: Monitor started: confirmations_required=3, poll_interval=15s (monitor.py:17)
+[2025-06-07 16:17:56,300] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:01,584] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:02,110] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:07,386] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:08,063] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:11,477] WARNING: No tx_hash for tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f, skipping... (monitor.py:25)
+[2025-06-07 16:18:11,478] WARNING: No tx_hash for tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24, skipping... (monitor.py:25)
+[2025-06-07 16:18:13,317] WARNING: Main account balance is too low. Current balance: 0.003586111759341967 ETH (checker.py:49)
+[2025-06-07 16:18:13,839] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99985.0 tokens (checker.py:68)
+[2025-06-07 16:18:13,905] INFO: START tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xb6dE0D7B9Ff50624126d0708eC0aa8823bE03C49 (main.py:24)
+[2025-06-07 16:18:14,409] INFO: SUCCESS tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f status=PENDING hash=0x9a369a5f9d03755ce03169ac4f333b88b2292b6d2dc5fd7f778f55399c778102 (main.py:50)
+[2025-06-07 16:18:14,410] INFO: START tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xe7295067dc7fc1bba853AB0FE7eC4545Ee123682 (main.py:24)
+[2025-06-07 16:18:14,986] INFO: SUCCESS tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24 status=PENDING hash=0x137dc0d95af6eab7620283aba1414cc3333ab66fe55a2653c7d3c8b6577815b1 (main.py:50)
+[2025-06-07 16:18:14,987] INFO: START tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x7a8D37694896FA72Ed9Cff5F735fdFe6e9d63D7D (main.py:24)
+[2025-06-07 16:18:15,564] INFO: SUCCESS tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030 status=PENDING hash=0x77857e8b237901543fee65d815b18cdfd6ee58b4cb417e9092147de33fc54076 (main.py:50)
+[2025-06-07 16:18:15,564] INFO: START tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x8f797D9B1f9917CC1dfF50A1000d13BFD3F9de00 (main.py:24)
+[2025-06-07 16:18:16,133] INFO: SUCCESS tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d status=PENDING hash=0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9 (main.py:50)
+[2025-06-07 16:18:16,134] INFO: START tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xA2d0bf56Fb47E8165B7369f113781CD3df5305a0 (main.py:24)
+[2025-06-07 16:18:16,699] INFO: SUCCESS tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f status=PENDING hash=0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572 (main.py:50)
+[2025-06-07 16:18:21,883] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:22,402] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:26,950] INFO: tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:27,440] INFO: tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:27,713] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:27,995] INFO: tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030: status=PENDING, confirmations=1 (monitor.py:53)
+[2025-06-07 16:18:28,242] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:28,368] ERROR: Error fetching receipt for tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found. (monitor.py:34)
+[2025-06-07 16:18:28,445] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:28,624] ERROR: Error fetching receipt for tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found. (monitor.py:34)
+[2025-06-07 16:18:28,627] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:33,560] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:34,092] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:39,340] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:39,891] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:44,054] INFO: tx_id=5d806f54-ec4d-44bd-b96e-15edc986339f: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:44,535] INFO: tx_id=0cb0369e-a870-4538-95c5-f45b5b511b24: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:45,082] INFO: tx_id=fde4824c-b0a5-443b-95cf-bd27a2c3d030: status=SUCCESSFUL, confirmations=3 (monitor.py:53)
+[2025-06-07 16:18:45,140] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:45,459] ERROR: Error fetching receipt for tx_id=dbf7d92b-160a-4c14-9630-2517e33f6a0d: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found. (monitor.py:34)
+[2025-06-07 16:18:45,461] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0x8dc56d056f5eb5ae5b7c2094271adfced8484c3ec337959177f73f2b851a2af9' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:45,637] ERROR: Error fetching receipt for tx_id=a51a6d6b-6e71-4913-ab6b-70e466f1658f: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found. (monitor.py:34)
+[2025-06-07 16:18:45,640] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 234, in get_transaction_receipt
+    receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 494, in get_transaction_receipt
+    return self._transaction_receipt(transaction_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 211, in formatted_response
+    apply_null_result_formatters(null_result_formatters, response, params)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\formatters.py", line 158, in apply_null_result_formatters
+    formatted_resp = pipe(params, null_result_formatters)
+  File "cytoolz\\functoolz.pyx", line 685, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 660, in cytoolz.functoolz.c_pipe
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\method_formatters.py", line 1154, in raise_transaction_not_found
+    raise TransactionNotFound(message)
+web3.exceptions.TransactionNotFound: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\monitor.py", line 29, in monitor_pending_transactions
+    receipt = eth.get_transaction_receipt(tx.tx_hash)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 239, in get_transaction_receipt
+    raise RuntimeError(f"Error fetching transaction receipt: {e}")
+RuntimeError: Error fetching transaction receipt: Transaction with hash: '0xe4b25d18af20e5b953b2f8b566186eaf2d1dc1642b0b79d1be5d50fca94b9572' not found.
+ (monitor.py:35)
+[2025-06-07 16:18:45,665] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:50,970] WARNING: Main account balance is too low. Current balance: 0.003398007187828822 ETH (checker.py:49)
+[2025-06-07 16:18:51,593] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 99982.0 tokens (checker.py:68)
+[2025-06-07 16:18:56,133] INFO: Worker stopped by user. (main.py:113)

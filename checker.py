@@ -60,8 +60,8 @@ class Checker:
         contract_address = Config.SFC_CONTRACT  # or any other token contract address you want to check
 
         try:
-            checksum_contract_address = Web3.to_checksum_address(contract_address)
-            checksum_account_address = Web3.to_checksum_address(self.eth_service.account.address)
+            checksum_contract_address = contract_address
+            checksum_account_address = self.eth_service.account.address
             balance = self.eth_service.get_token_balance(checksum_contract_address, checksum_account_address)
             if balance < 100000 * 10 ** 18:
                 self.error_message = f"Main account token balance for {checksum_contract_address} is too low. {balance / 10 ** 18} tokens"

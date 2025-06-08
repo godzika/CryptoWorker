@@ -1,9 +1,13 @@
+import time
+
 from web3 import Web3
+from web3.exceptions import TransactionNotFound
+
 from config import Config
-from utils import validate_eth_address
+from utils import validate_eth_address, NonceManager
 import logging
 import json
-
+import requests
 
 class EthereumService:
 
@@ -31,16 +35,12 @@ class EthereumService:
         if not self.w3.is_connected():
             raise ConnectionError("Ethereum node not connected")
         self.account = self.w3.eth.account.from_key(Config.PRIVATE_KEY)
+        self.nonce_manager = NonceManager(self.w3, self.account.address)
 
-    def send_token(self, contract_address, to_address, amount, decimals=18):
+    def send_token(self, contract_address, to_address, amount, decimals=18, custom_nonce=None):
         """
         Sends an ERC20 token from the main account to a specified address.
-        Validates both contract and destination addresses before proceeding.
-        :param contract_address:
-        :param to_address:
-        :param amount:
-        :param decimals:
-        :return:
+        Uses get_gas_fee to determine optimal gas params.
         """
         # Validate both contract and to_address!
         if not validate_eth_address(contract_address):
@@ -48,20 +48,38 @@ class EthereumService:
         if not validate_eth_address(to_address):
             raise ValueError(f"Invalid destination address: {to_address}")
 
+        if custom_nonce is None:
+            nonce = self.nonce_manager.get_next_nonce()
+        else:
+            nonce = custom_nonce
+
         contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
+
+        tx_params = {
+            'from': self.account.address,
+            'nonce': nonce,
+            'gas': 300000,  # აქ შეგიძლია გონივრული ლიმიტი დააყენო
+            'chainId': Config.NETWORK_ID,
+        }
+
+        # თუ გაზის ფასები არ გაქვს, აიღე მაღალი გაზის ფასები
+        gas_fees = self.get_gas_fee("high")
         tx = contract.functions.transfer(
             to_address,
             int(amount * (10 ** decimals))
         ).build_transaction({
             'from': self.account.address,
-            'nonce': self.w3.eth.get_transaction_count(self.account.address),
-            'gas': 120000,
-            'gasPrice': self.w3.eth.gas_price,
+            'nonce': nonce,
+            'gas': 300000,
+            'maxFeePerGas': gas_fees["maxFeePerGas"],
+            'maxPriorityFeePerGas': gas_fees["maxPriorityFeePerGas"],
             'chainId': Config.NETWORK_ID,
         })
+
+
         signed_tx = self.account.sign_transaction(tx)
-        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
-        return tx_hash.hex()
+        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+        return self.w3.to_hex(tx_hash)
 
     def _get_erc20_abi(self):
         """
@@ -124,7 +142,7 @@ class EthereumService:
             'chainId': Config.NETWORK_ID,
         }
         signed_tx = self.account.sign_transaction(tx)
-        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
         return tx_hash.hex()
 
     def send_eth_from_user_to_destination(self, user_address, user_private_key, destination_address, amount):
@@ -151,7 +169,7 @@ class EthereumService:
             'chainId': Config.NETWORK_ID,
         }
         signed_tx = self.w3.eth.account.sign_transaction(tx, user_private_key)
-        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
         return tx_hash.hex()
 
     def send_sfc_from_user_to_destination(self, user_address, user_private_key, destination_address, amount):
@@ -176,12 +194,12 @@ class EthereumService:
         ).build_transaction({
             'from': user_address,
             'nonce': self.w3.eth.get_transaction_count(user_address),
-            'gas': 120000,
+            'gas': 300000,
             'gasPrice': self.w3.eth.gas_price,
             'chainId': Config.NETWORK_ID,
         })
         signed_tx = self.w3.eth.account.sign_transaction(tx, user_private_key)
-        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
         return tx_hash.hex()
 
     def send_usdt_from_user_to_destination(self, user_address, user_private_key, destination_address, amount):
@@ -211,24 +229,26 @@ class EthereumService:
             'chainId': Config.NETWORK_ID,
         })
         signed_tx = self.w3.eth.account.sign_transaction(tx, user_private_key)
-        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+        tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
         return tx_hash.hex()
 
-    def get_transaction_receipt(self, tx_hash):
-        """
-        Retrieves the transaction receipt for a given transaction hash.
-        :param tx_hash:
-        :return:
-        """
+    def get_transaction_receipt(self, tx_hash, max_attempts=10, delay=5):
         if not isinstance(tx_hash, str) or not tx_hash.startswith('0x'):
             raise ValueError(f"Invalid transaction hash: {tx_hash}")
-        try:
-            receipt = self.w3.eth.get_transaction_receipt(tx_hash)
-            if receipt is None:
-                raise ValueError(f"Transaction receipt not found for hash: {tx_hash}")
-            return receipt
-        except Exception as e:
-            raise RuntimeError(f"Error fetching transaction receipt: {e}")
+        attempts = 0
+        while attempts < max_attempts:
+            try:
+                receipt = self.w3.eth.get_transaction_receipt(tx_hash)
+                if receipt:
+                    return receipt
+            except TransactionNotFound:
+                time.sleep(delay)
+                attempts += 1
+                continue
+            except Exception as e:
+                raise RuntimeError(f"Error fetching transaction receipt: {e}")
+        # ბოლოს თუ ისევ ვერ ვიპოვეთ
+        return None
 
     def get_transaction_status(self, tx_hash):
         """
@@ -258,3 +278,16 @@ class EthereumService:
         except Exception as e:
             logging.error(f"Error checking account balance: {e}")
             return False
+
+    def get_gas_fee(self, urgency="high"):
+        url = f"https://gas.api.infura.io/networks/{Config.NETWORK_ID}/suggestedGasFees"
+
+        headers = {"Authorization": f"Basic {Config.INFURA_API_KEY}"} if Config.INFURA_API_KEY else {}
+        r = requests.get(url, headers=headers)
+        r.raise_for_status()
+        fees = r.json()[urgency]
+        return {
+            "maxFeePerGas": Web3.to_wei(float(fees["suggestedMaxFeePerGas"]), "gwei"),
+            "maxPriorityFeePerGas": Web3.to_wei(float(fees["suggestedMaxPriorityFeePerGas"]), "gwei"),
+        }
+
