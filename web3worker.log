@@ -1521,3 +1521,588 @@ requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://g
 requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://gas.api.infura.io/networks/1/suggestedGasFees
  (main.py:55)
 [2025-06-08 00:54:28,986] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 15:48:49,912] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 15:48:50,044] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 15:48:50,206] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 15:48:50,207] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 15:48:50,432] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 15:48:50,596] WARNING: Main account balance is too low. Current balance: 0.030751031590183244 ETH (checker.py:49)
+[2025-06-08 15:48:51,097] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69965.0 tokens (checker.py:68)
+[2025-06-08 15:48:51,099] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 15:48:51,099] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 15:48:51,246] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 15:48:51,247] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 15:48:51,446] INFO: START tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x07801fFa12E04a42DEB6654b7d16BF22C246aDd3 (main.py:24)
+[2025-06-08 15:48:52,959] INFO: SUCCESS tx_id=a262eb1e-f6be-4063-ac88-e1e24d7caa6b status=PENDING hash=0x6a4864afa1a18eb85bf8c7b1ffbc5d0ecc33523721ad81f04e8be6d88411776c (main.py:50)
+[2025-06-08 15:48:52,960] INFO: START tx_id=a495be1d-35f7-4a09-9d19-7337ce1451c7 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x53a4F03B4d1413dbE0DBDcEd4B1D171525a93b65 (main.py:24)
+[2025-06-08 15:48:54,294] INFO: SUCCESS tx_id=a495be1d-35f7-4a09-9d19-7337ce1451c7 status=PENDING hash=0x05ba224e6307e7bca7fddd0b488c9e9428548dc9b9c50104511e140701342751 (main.py:50)
+[2025-06-08 15:48:54,295] INFO: START tx_id=7de3721a-c683-408d-9ce4-e7b8142dd6cf type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x74826cBA906Ba199a0C29d716F298Ce34Bed0D63 (main.py:24)
+[2025-06-08 15:48:55,663] INFO: SUCCESS tx_id=7de3721a-c683-408d-9ce4-e7b8142dd6cf status=PENDING hash=0x63768bc8e5b231501ee9472045e725a2e40f37ea8c79f1a069d6ff8eb3456a88 (main.py:50)
+[2025-06-08 15:51:43,873] INFO: START tx_id=ae4221ef-f8d8-43ab-8ecc-fac314090d84 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xC7d3986D87C9E5a6DeBB30A285892C46B2853208 (main.py:24)
+[2025-06-08 15:51:45,962] INFO: SUCCESS tx_id=ae4221ef-f8d8-43ab-8ecc-fac314090d84 status=PENDING hash=0x7bfa8c15f426c13a5856384d0b23ed34be468e0b3c09ab120a5b697e2d9a8d3c (main.py:50)
+[2025-06-08 15:52:01,253] INFO: START tx_id=e0f2f6d1-907d-46b4-8e55-9ca2fff2c6b4 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE3BCc45bF4194F12DD1A48908CaEb69221D7f9c5 (main.py:24)
+[2025-06-08 15:52:02,553] INFO: SUCCESS tx_id=e0f2f6d1-907d-46b4-8e55-9ca2fff2c6b4 status=PENDING hash=0xe720c81236d9cc32c402d5bfdba47d5d7f725d25453a94cc8275c7faf1430d06 (main.py:50)
+[2025-06-08 15:52:23,121] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:24,125] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 58'} (main.py:54)
+[2025-06-08 15:52:24,188] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 58'}
+ (main.py:55)
+[2025-06-08 15:52:29,408] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:30,418] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 59'} (main.py:54)
+[2025-06-08 15:52:30,420] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 59'}
+ (main.py:55)
+[2025-06-08 15:52:35,627] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:36,618] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 60'} (main.py:54)
+[2025-06-08 15:52:36,619] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 60'}
+ (main.py:55)
+[2025-06-08 15:52:41,900] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:43,324] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 61'} (main.py:54)
+[2025-06-08 15:52:43,325] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 61'}
+ (main.py:55)
+[2025-06-08 15:52:48,525] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:49,686] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 62'} (main.py:54)
+[2025-06-08 15:52:49,688] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 62'}
+ (main.py:55)
+[2025-06-08 15:52:54,933] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:52:55,948] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 63'} (main.py:54)
+[2025-06-08 15:52:55,949] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 63'}
+ (main.py:55)
+[2025-06-08 15:53:01,221] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:02,271] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 64'} (main.py:54)
+[2025-06-08 15:53:02,272] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 64'}
+ (main.py:55)
+[2025-06-08 15:53:07,469] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:08,494] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 65'} (main.py:54)
+[2025-06-08 15:53:08,496] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 65'}
+ (main.py:55)
+[2025-06-08 15:53:13,770] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:14,756] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 66'} (main.py:54)
+[2025-06-08 15:53:14,758] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 66'}
+ (main.py:55)
+[2025-06-08 15:53:19,955] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:20,968] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 67'} (main.py:54)
+[2025-06-08 15:53:20,970] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 67'}
+ (main.py:55)
+[2025-06-08 15:53:26,168] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:27,182] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 68'} (main.py:54)
+[2025-06-08 15:53:27,183] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 68'}
+ (main.py:55)
+[2025-06-08 15:53:32,451] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:33,450] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 69'} (main.py:54)
+[2025-06-08 15:53:33,452] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 69'}
+ (main.py:55)
+[2025-06-08 15:53:38,676] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:39,693] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 70'} (main.py:54)
+[2025-06-08 15:53:39,695] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 70'}
+ (main.py:55)
+[2025-06-08 15:53:44,974] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:45,993] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 71'} (main.py:54)
+[2025-06-08 15:53:45,996] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 71'}
+ (main.py:55)
+[2025-06-08 15:53:51,263] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:52,389] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 72'} (main.py:54)
+[2025-06-08 15:53:52,390] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 72'}
+ (main.py:55)
+[2025-06-08 15:53:57,591] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:53:58,597] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 73'} (main.py:54)
+[2025-06-08 15:53:58,599] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 73'}
+ (main.py:55)
+[2025-06-08 15:54:03,869] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:54:04,872] ERROR: FAILED tx_id=56cba071-070d-47a6-8caf-eb930a90c138 error={'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 74'} (main.py:54)
+[2025-06-08 15:54:04,874] ERROR: Traceback (most recent call last):
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\main.py", line 31, in process_transaction
+    tx_hash = eth.send_token(Config.SFC_CONTRACT, tx.destination_address, tx.amount, custom_nonce=nonce)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\ethereum.py", line 77, in send_token
+    tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\eth\eth.py", line 397, in send_raw_transaction
+    return self._send_raw_transaction(transaction)
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\module.py", line 112, in caller
+    result = w3.manager.request_blocking(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 232, in request_blocking
+    return self.formatted_response(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\manager.py", line 198, in formatted_response
+    validate_rpc_response_and_raise_if_error(
+  File "C:\Users\Luka\PycharmProjects\CryptoWorker\.venv1\lib\site-packages\web3\_utils\validation.py", line 401, in validate_rpc_response_and_raise_if_error
+    raise web3_rpc_error
+web3.exceptions.Web3RPCError: {'code': -32000, 'message': 'nonce too low: next nonce 75, tx nonce 74'}
+ (main.py:55)
+[2025-06-08 15:54:10,081] INFO: START tx_id=56cba071-070d-47a6-8caf-eb930a90c138 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xE61A21C5890E9bC2eA3f826d301f8641F44c4abd (main.py:24)
+[2025-06-08 15:54:11,351] INFO: SUCCESS tx_id=56cba071-070d-47a6-8caf-eb930a90c138 status=PENDING hash=0xbab926937572ef739506f85f00b5803b56c1d03a038c59543fe07a0d3209122d (main.py:50)
+[2025-06-08 16:04:06,799] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 16:04:12,292] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 16:04:12,428] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 16:04:12,592] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 16:04:12,593] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 16:04:12,820] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 16:04:12,979] WARNING: Main account balance is too low. Current balance: 0.02657652868951903 ETH (checker.py:49)
+[2025-06-08 16:04:13,468] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69942.0 tokens (checker.py:68)
+[2025-06-08 16:04:13,470] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 16:04:13,471] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 16:04:13,604] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 16:04:13,605] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 16:06:10,339] INFO: START tx_id=373b7415-8ac9-4fbe-a88a-aea26e6f435f type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xae28294C15C88c630f6E14B1E9aF81b26B2b2108 (main.py:24)
+[2025-06-08 16:06:12,153] INFO: SUCCESS tx_id=373b7415-8ac9-4fbe-a88a-aea26e6f435f status=PENDING hash=0x63ab333469590c10a8a4c0ea005584a3fdde3414e3701119c2d2a04acef9c3bb (main.py:50)
+[2025-06-08 16:14:24,062] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 16:14:28,565] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 16:14:28,565] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 16:14:28,694] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 16:14:28,694] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 16:14:28,854] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 16:14:28,854] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 16:14:28,855] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 16:14:28,855] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 16:14:29,078] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 16:14:29,078] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 16:14:29,242] WARNING: Main account balance is too low. Current balance: 0.026441580590490964 ETH (checker.py:49)
+[2025-06-08 16:14:29,242] WARNING: Main account balance is too low. Current balance: 0.026441580590490964 ETH (checker.py:49)
+[2025-06-08 16:14:29,780] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69941.0 tokens (checker.py:68)
+[2025-06-08 16:14:29,780] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69941.0 tokens (checker.py:68)
+[2025-06-08 16:14:29,783] INFO: Monitor started. Checking for pending transactions... (monitor.py:47)
+[2025-06-08 16:14:29,783] INFO: Monitor started. Checking for pending transactions... (monitor.py:47)
+[2025-06-08 16:14:29,783] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 16:14:29,783] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 16:14:29,785] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 16:14:29,785] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 16:14:29,914] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:14:29,914] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 16:14:29,914] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:14:29,914] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 16:14:29,916] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 16:14:29,916] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 16:14:39,989] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:14:39,989] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:14:50,068] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:14:50,068] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:00,146] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:00,146] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:10,216] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:10,216] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:20,288] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:20,288] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:30,366] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:30,366] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:40,444] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:40,444] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:50,523] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:15:50,523] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:00,592] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:00,592] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:10,667] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:10,667] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:20,738] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:20,738] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:30,819] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:30,819] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:40,896] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:40,896] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:50,966] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:16:50,966] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:01,039] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:01,039] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:11,111] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:11,111] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:21,187] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:21,187] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:31,254] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:31,254] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:41,328] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:41,328] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:51,403] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:17:51,403] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:01,479] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:01,479] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:11,558] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:11,558] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:21,628] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:21,628] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:31,711] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:31,711] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:41,781] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:41,781] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:51,858] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:18:51,858] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:01,945] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:01,945] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:12,022] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:12,022] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:22,102] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:22,102] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:32,170] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:32,170] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:42,238] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:42,238] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:52,316] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:19:52,316] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:02,391] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:02,391] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:12,475] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:12,475] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:22,543] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:22,543] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:32,615] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:32,615] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:42,692] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:42,692] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:52,763] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:20:52,763] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:02,844] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:02,844] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:12,925] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:12,925] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:23,001] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:23,001] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:33,078] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:33,078] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:43,156] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:43,156] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:53,227] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:21:53,227] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:03,305] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:03,305] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:13,375] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:13,375] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:23,448] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:23,448] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:33,556] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:33,556] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:43,632] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:43,632] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:53,708] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:22:53,708] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:03,783] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:03,783] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:13,858] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:13,858] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:23,933] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:23,933] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:34,013] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:34,013] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:44,098] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:44,098] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:54,168] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:23:54,168] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:04,241] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:04,241] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:12,238] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 16:24:12,238] INFO: Worker stopped by user. (main.py:111)
+[2025-06-08 16:24:17,246] INFO: Checking if all services are running and connected... (checker.py:18)
+[2025-06-08 16:24:17,379] INFO: Database connection status: True (checker.py:19)
+[2025-06-08 16:24:17,536] INFO: Ethereum node connection status: True (checker.py:20)
+[2025-06-08 16:24:17,537] INFO: Uniswap Router connection status: True (checker.py:21)
+[2025-06-08 16:24:17,759] INFO: All services are running and connected successfully. (checker.py:38)
+[2025-06-08 16:24:17,928] WARNING: Main account balance is too low. Current balance: 0.026441580590490964 ETH (checker.py:49)
+[2025-06-08 16:24:18,434] WARNING: Main account token balance for 0xEA09246cA65D690ff1e6ADc2Ddf0AF12dC5BEF96 is too low. 69941.0 tokens (checker.py:68)
+[2025-06-08 16:24:18,437] INFO: Monitor started. Checking for pending transactions... (monitor.py:47)
+[2025-06-08 16:24:18,437] INFO: Starting main worker loop... (main.py:88)
+[2025-06-08 16:24:18,440] INFO: Processing lost transactions... (main.py:90)
+[2025-06-08 16:24:18,569] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:18,569] INFO: No lost transactions found. (main.py:93)
+[2025-06-08 16:24:18,570] INFO: Processing pending transactions... (main.py:99)
+[2025-06-08 16:24:28,657] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:38,820] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:48,897] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:24:58,967] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:25:04,332] INFO: START tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0x32B5c7Ae1e5aC2aE6903d9F9952Ff1D408641108 (main.py:24)
+[2025-06-08 16:25:05,745] INFO: SUCCESS tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8 status=PENDING hash=0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (main.py:50)
+[2025-06-08 16:25:09,102] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:09,704] INFO: Receipt for tx 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 not found, attempt 1/10 (monitor.py:32)
+[2025-06-08 16:25:14,884] INFO: Receipt for tx 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 not found, attempt 2/10 (monitor.py:32)
+[2025-06-08 16:25:20,219] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=PENDING, confirmations=1 (monitor.py:84)
+[2025-06-08 16:25:25,430] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:25,756] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=PENDING, confirmations=1 (monitor.py:84)
+[2025-06-08 16:25:30,961] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:31,282] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=PENDING, confirmations=1 (monitor.py:84)
+[2025-06-08 16:25:36,483] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:36,802] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=PENDING, confirmations=2 (monitor.py:84)
+[2025-06-08 16:25:42,002] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:42,320] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=PENDING, confirmations=2 (monitor.py:84)
+[2025-06-08 16:25:47,525] INFO: Checking transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 (tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8) (monitor.py:69)
+[2025-06-08 16:25:47,846] INFO: tx_id=79d83111-c3ec-415a-9fe3-ddcec1380ac8: status=SUCCESSFUL, confirmations=3 (monitor.py:84)
+[2025-06-08 16:25:47,983] INFO: Transaction 0xfc5933d05332f5c5e2d3609d6813c3cf57bb7f07cfbbcc1ad770396bf1eafce2 confirmed successfully. (monitor.py:97)
+[2025-06-08 16:25:53,253] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:03,327] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:13,395] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:23,474] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:33,548] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:43,622] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:26:53,702] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:03,780] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:13,855] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:23,930] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:34,023] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:44,089] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:27:54,160] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:28:04,230] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:28:14,302] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:28:24,384] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:28:34,454] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:28:44,298] INFO: START tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5 type=WITHDRAW_SFC amount=1.000000000000000000 dest=0xcae2C1a45D533CCC4048a85d33f4bCfa001ecb0d (main.py:24)
+[2025-06-08 16:28:44,528] WARNING: Invalid tx_hash in DB for tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: None (monitor.py:61)
+[2025-06-08 16:28:46,151] INFO: SUCCESS tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5 status=PENDING hash=0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (main.py:50)
+[2025-06-08 16:28:49,789] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:28:50,390] INFO: Receipt for tx 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa not found, attempt 1/10 (monitor.py:32)
+[2025-06-08 16:28:55,732] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=PENDING, confirmations=1 (monitor.py:84)
+[2025-06-08 16:29:00,928] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:29:01,255] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=PENDING, confirmations=1 (monitor.py:84)
+[2025-06-08 16:29:06,462] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:29:06,788] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=PENDING, confirmations=2 (monitor.py:84)
+[2025-06-08 16:29:11,998] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:29:12,316] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=PENDING, confirmations=2 (monitor.py:84)
+[2025-06-08 16:29:17,528] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:29:17,842] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=PENDING, confirmations=2 (monitor.py:84)
+[2025-06-08 16:29:23,045] INFO: Checking transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa (tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5) (monitor.py:69)
+[2025-06-08 16:29:23,363] INFO: tx_id=4c961cec-4d05-4623-9f27-73c5df7fc7b5: status=SUCCESSFUL, confirmations=3 (monitor.py:84)
+[2025-06-08 16:29:23,491] INFO: Transaction 0xfb8a8280a8c4128bdcff7fafe12663648ec5ac6b59b8d7ece87d8804555d3eaa confirmed successfully. (monitor.py:97)
+[2025-06-08 16:29:28,752] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:29:38,826] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:29:48,898] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:29:58,978] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:09,044] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:19,119] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:29,193] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:39,274] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:49,346] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:30:59,417] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:31:09,493] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:31:19,560] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:31:29,635] INFO: No pending transactions found. Sleeping 10 seconds... (monitor.py:54)
+[2025-06-08 16:31:33,026] INFO: Worker stopped by user. (main.py:111)

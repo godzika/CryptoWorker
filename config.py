@@ -28,3 +28,4 @@ class Config:
     NETWORK_ID = int(os.getenv('NETWORK_ID', 1))
     MAX_RETRIES = int(os.getenv('MAX_RETRIES', 3))
     INFURA_API_KEY = os.getenv('INFURA_API_KEY', None)
+    INFURA_API_SECRET = os.getenv('INFURA_API_SECRET', None)

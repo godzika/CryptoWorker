@@ -75,16 +75,17 @@ def gas_price_estimate(w3, multiplier: float = 1.2) -> int:
 def setup_logger(logfile="web3worker.log"):
     logger = logging.getLogger("SferoWeb3Worker")
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s (%(filename)s:%(lineno)d)')
-    # Log to file (rotate 5MB, 5 files)
-    file_handler = RotatingFileHandler(logfile, maxBytes=5*1024*1024, backupCount=5)
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-    # Also log to stdout
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(formatter)
-    logger.addHandler(stream_handler)
+    # Check if the logger already has handlers to avoid adding multiple handlers
+    if not logger.handlers:
+        formatter = logging.Formatter('[%(asctime)s] %(levelname)s: %(message)s (%(filename)s:%(lineno)d)')
+        file_handler = RotatingFileHandler(logfile, maxBytes=5*1024*1024, backupCount=5)
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(stream_handler)
     return logger
+
 
 # utils.py
 

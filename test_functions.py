@@ -60,7 +60,7 @@ def insert_test_transaction(
 
 if __name__ == '__main__':
     # 1. გენერაცია
-    addresses = generate_eth_addresses(5, "addresses.txt")
+    addresses = generate_eth_addresses(1, "addresses.txt")
 
     # 2. თითო მისამართზე test ტრანზაქცია
     for public_key, private_key in addresses:

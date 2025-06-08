@@ -36,6 +36,8 @@ class EthereumService:
             raise ConnectionError("Ethereum node not connected")
         self.account = self.w3.eth.account.from_key(Config.PRIVATE_KEY)
         self.nonce_manager = NonceManager(self.w3, self.account.address)
+        self.api_key = Config.INFURA_API_KEY
+        self.api_secret = Config.INFURA_API_SECRET  # Assuming
 
     def send_token(self, contract_address, to_address, amount, decimals=18, custom_nonce=None):
         """
@@ -55,15 +57,9 @@ class EthereumService:
 
         contract = self.w3.eth.contract(address=contract_address, abi=self._get_erc20_abi())
 
-        tx_params = {
-            'from': self.account.address,
-            'nonce': nonce,
-            'gas': 300000,  # აქ შეგიძლია გონივრული ლიმიტი დააყენო
-            'chainId': Config.NETWORK_ID,
-        }
 
         # თუ გაზის ფასები არ გაქვს, აიღე მაღალი გაზის ფასები
-        gas_fees = self.get_gas_fee("high")
+        fees = self.get_eip1559_gas_fees_infura()
         tx = contract.functions.transfer(
             to_address,
             int(amount * (10 ** decimals))
@@ -71,8 +67,8 @@ class EthereumService:
             'from': self.account.address,
             'nonce': nonce,
             'gas': 300000,
-            'maxFeePerGas': gas_fees["maxFeePerGas"],
-            'maxPriorityFeePerGas': gas_fees["maxPriorityFeePerGas"],
+            'maxFeePerGas': fees["maxFeePerGas"],
+            'maxPriorityFeePerGas': fees["maxPriorityFeePerGas"],
             'chainId': Config.NETWORK_ID,
         })
 
@@ -279,15 +275,22 @@ class EthereumService:
             logging.error(f"Error checking account balance: {e}")
             return False
 
-    def get_gas_fee(self, urgency="high"):
-        url = f"https://gas.api.infura.io/networks/{Config.NETWORK_ID}/suggestedGasFees"
-
-        headers = {"Authorization": f"Basic {Config.INFURA_API_KEY}"} if Config.INFURA_API_KEY else {}
-        r = requests.get(url, headers=headers)
-        r.raise_for_status()
-        fees = r.json()[urgency]
+    def get_eip1559_gas_fees_infura(self, chain_id="1", urgency="high"):
+        """
+        აბრუნებს EIP-1559 fee-ებს Infura-ს gas API-დან
+        """
+        url = f"https://gas.api.infura.io/networks/{chain_id}/suggestedGasFees"
+        # რეალური ავთენთიკაცია -- და არა header-ით, არამედ auth ტუპლით
+        response = requests.get(url, auth=(self.api_key, self.api_secret))
+        response.raise_for_status()
+        data = response.json()
+        # urgency უნდა იყოს 'low', 'medium', ან 'high'
+        fees = data[urgency]
         return {
             "maxFeePerGas": Web3.to_wei(float(fees["suggestedMaxFeePerGas"]), "gwei"),
             "maxPriorityFeePerGas": Web3.to_wei(float(fees["suggestedMaxPriorityFeePerGas"]), "gwei"),
+            "minWaitTimeMs": fees["minWaitTimeEstimate"],
+            "maxWaitTimeMs": fees["maxWaitTimeEstimate"]
         }
+
 
